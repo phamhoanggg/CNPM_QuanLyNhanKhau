@@ -17,6 +17,13 @@ public class DatabaseHelper {
     private static final String DATABASE_USERNAME = "root";
     private static final String DATABASE_PASSWORD = "";
     
+    public static final String insert_sql = "INSERT INTO `nhankhau` (`idnhankhau`, `hoten`, `bidanh`, `ngaysinh`, `gioitinh`, `quanhevoichuho`, `noisinh`, "
+                + "`quequan`, `dantoc`, `nghenghiep`, `noilamviec`, `CCCD`, `ngaycap`, `noicap`, `ngaydangkythuongtru`, `noidangkythuongtruchuyenden`, `ghichu`) "
+                + "VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    
+    public static final String checkExist_sql = "SELECT `CCCD` from `nhankhau`"+
+                "  WHERE `CCCD` = ?";
+    
     public static Connection ConnectDB() throws SQLException {
         Connection connection = DriverManager
                 .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);

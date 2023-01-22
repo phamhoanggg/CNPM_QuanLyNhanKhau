@@ -26,6 +26,8 @@ public class NguoiQuanLyDao {
         ){
             prepSt.setString(1, username);
             prepSt.setString(2, password);
+
+
             try(ResultSet rs = prepSt.executeQuery();){
                 if(rs.next()){
                     NguoiQuanLy nql = new NguoiQuanLy(username, password);
