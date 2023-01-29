@@ -234,7 +234,7 @@
                           <Component id="insert_note_text" linkSize="2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                           <Component id="insert_submit_NK_Btn" min="-2" pref="36" max="-2" attributes="0"/>
-                          <EmptySpace pref="42" max="32767" attributes="0"/>
+                          <EmptySpace pref="115" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -436,7 +436,7 @@
                               <Component id="Delete_NK_Btn" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ShowTabPane" pref="532" max="32767" attributes="0"/>
+                          <Component id="ShowTabPane" pref="605" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -544,7 +544,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="insert_submit_HK_Btn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -584,17 +584,23 @@
                               <Component id="insert_DoB_HK_text" linkSize="3" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
                               <Component id="insert_Note_HK_text" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                           <Component id="insert_submit_HK_Btn" min="-2" pref="36" max="-2" attributes="0"/>
-                          <EmptySpace pref="325" max="32767" attributes="0"/>
+                          <EmptySpace pref="399" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JTextField" name="insert_CCCD_HK_text">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insert_CCCD_HK_textActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="insert_DoB_HK_text">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insert_DoB_HK_textActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel18">
                   <Properties>
@@ -612,8 +618,14 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="insert_ID_HK_text1">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insert_ID_HK_text1ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="insert_HTCH_HK_text">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insert_HTCH_HK_textActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel24">
                   <Properties>
@@ -644,6 +656,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="insert_Note_HK_text">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insert_Note_HK_textActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -702,7 +717,7 @@
                               <Component id="Delete_HK_Btn" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="ShowTabPane1" pref="526" max="32767" attributes="0"/>
+                          <Component id="ShowTabPane1" pref="599" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -715,6 +730,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Search_ID_HK">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Search_ID_HKActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="Show_HK_Btn">
                   <Properties>
@@ -730,12 +748,18 @@
                     <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                     <Property name="horizontalTextPosition" type="int" value="4"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Change_HK_BtnActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="Delete_HK_Btn">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Delete_HK_BtnActionPerformed"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JTabbedPane" name="ShowTabPane1">
 
@@ -781,63 +805,66 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jRadioButton12" min="-2" pref="116" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jRadioButton13" max="32767" attributes="0"/>
-                                      </Group>
                                       <Component id="jLabel22" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jTextField40" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="insert_startTimeCL_PC_text" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel35" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField31" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="insert_IDNK_PC_text" alignment="0" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jRadioButton5" min="-2" pref="125" max="-2" attributes="0"/>
+                                          <Component id="done_test" min="-2" pref="125" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jRadioButton6" max="32767" attributes="0"/>
+                                          <Component id="notdone_test" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel31" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel38" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField32" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="insert_name_PC_text" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel34" alignment="1" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jRadioButton7" min="-2" pref="125" max="-2" attributes="0"/>
+                                          <Component id="positive" min="-2" pref="125" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jRadioButton8" min="-2" pref="119" max="-2" attributes="0"/>
+                                          <Component id="negative" min="-2" pref="119" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jLabel28" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jLabel44" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel32" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel39" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField33" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="insert_methodTest_PC_text" alignment="1" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="Cachly_TN" min="-2" pref="116" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Cachly_KVCL" min="-2" pref="128" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace pref="243" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextField35" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel33" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jLabel36" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jTextField28" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jLabel40" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField34" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel23" max="32767" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jRadioButton9" min="-2" pref="77" max="-2" attributes="0"/>
+                                  <EmptySpace pref="275" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="insert_CCCD_PC_text" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel33" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jLabel36" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="insert_IDHK_PC_text" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jLabel40" alignment="0" pref="250" max="32767" attributes="0"/>
+                                          <Component id="insert_timeTest_PC_text" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel23" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                          <Component id="level_F2" min="-2" pref="77" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jRadioButton10" min="-2" pref="79" max="-2" attributes="0"/>
+                                          <Component id="level_F1" min="-2" pref="79" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jRadioButton11" min="-2" pref="82" max="-2" attributes="0"/>
+                                          <Component id="level_F0" min="-2" pref="82" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
+                              <Component id="jLabel28" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel44" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                                  <Component id="insert_submit_PC_Btn" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -853,8 +880,8 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField31" linkSize="4" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jTextField28" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="insert_IDNK_PC_text" linkSize="4" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="insert_IDHK_PC_text" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -862,41 +889,41 @@
                                       <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField35" linkSize="4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="insert_CCCD_PC_text" linkSize="4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jTextField32" linkSize="4" alignment="1" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="insert_name_PC_text" linkSize="4" alignment="1" min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jRadioButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="done_test" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="notdone_test" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jRadioButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="positive" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="negative" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                   <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField34" linkSize="4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="insert_timeTest_PC_text" linkSize="4" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTextField33" linkSize="4" min="-2" max="-2" attributes="0"/>
+                          <Component id="insert_methodTest_PC_text" linkSize="4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -906,27 +933,27 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField40" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton11" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="insert_startTimeCL_PC_text" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="level_F2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="level_F1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="level_F0" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jRadioButton12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Cachly_TN" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Cachly_KVCL" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButton8" min="-2" pref="36" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="49" max="32767" attributes="0"/>
+                          <Component id="insert_submit_PC_Btn" min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="jTextField28">
+                <Component class="javax.swing.JTextField" name="insert_IDHK_PC_text">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel31">
                   <Properties>
@@ -945,7 +972,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel34">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="K&#x1ebf;t qu&#x1ea3; test Covid-19"/>
+                    <Property name="text" type="java.lang.String" value="K&#x1ebf;t qu&#x1ea3; test Covid-19 l&#x1ea7;n g&#x1ea7;n nh&#x1ea5;t"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel35">
@@ -958,51 +985,54 @@
                     <Property name="text" type="java.lang.String" value="S&#x1ed1; CCCD"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField31">
+                <Component class="javax.swing.JTextField" name="insert_IDNK_PC_text">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField32">
+                <Component class="javax.swing.JTextField" name="insert_name_PC_text">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel38">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="H&#x1ecd; v&#xe0; t&#xea;n"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField33">
+                <Component class="javax.swing.JTextField" name="insert_methodTest_PC_text">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField34">
+                <Component class="javax.swing.JTextField" name="insert_timeTest_PC_text">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField34ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insert_timeTest_PC_textActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton8">
+                <Component class="javax.swing.JButton" name="insert_submit_PC_Btn">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="G&#x1eed;i"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insert_submit_PC_BtnActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel39">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="H&#xec;nh th&#x1ee9;c ki&#x1ec3;m tra"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton5">
+                <Component class="javax.swing.JRadioButton" name="done_test">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#x110;&#xe3; th&#x1ef1;c hi&#x1ec7;n"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton5ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="done_testActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton6">
+                <Component class="javax.swing.JRadioButton" name="notdone_test">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Ch&#x1b0;a th&#x1ef1;c hi&#x1ec7;n"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton6ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="notdone_testActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField35">
+                <Component class="javax.swing.JTextField" name="insert_CCCD_PC_text">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField35ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insert_CCCD_PC_textActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel40">
@@ -1018,19 +1048,22 @@
                     <Property name="text" type="java.lang.String" value="N&#x1ebf;u d&#x1b0;&#x1a1;ng t&#xed;nh &#x111;i&#x1ec1;n th&#xf4;ng tin b&#xea;n d&#x1b0;&#x1edb;i"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField40">
+                <Component class="javax.swing.JTextField" name="insert_startTimeCL_PC_text">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insert_startTimeCL_PC_textActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton7">
+                <Component class="javax.swing.JRadioButton" name="positive">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="D&#x1b0;&#x1a1;ng t&#xed;nh"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton8">
+                <Component class="javax.swing.JRadioButton" name="negative">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#xc2;m t&#xed;nh"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton8ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="negativeActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel28">
@@ -1038,7 +1071,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="N&#x1ebf;u &#x111;&#xe3; th&#x1ef1;c hi&#x1ec7;n &#x111;i&#x1ec1;n th&#xf4;ng tin b&#xea;n d&#x1b0;&#x1edb;i"/>
+                    <Property name="text" type="java.lang.String" value="N&#x1ebf;u &#x111;&#xe3; th&#x1ef1;c hi&#x1ec7;n &#x111;i&#x1ec1;n th&#xf4;ng tin b&#xea;n d&#x1b0;&#x1edb;i "/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel23">
@@ -1051,27 +1084,30 @@
                     <Property name="text" type="java.lang.String" value="Tr&#x1ea1;ng th&#xe1;i c&#xe1;ch ly"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton9">
+                <Component class="javax.swing.JRadioButton" name="level_F2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="1"/>
+                    <Property name="text" type="java.lang.String" value="1 (F2)"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="level_F2ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="level_F1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="2 (F1)"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton10">
+                <Component class="javax.swing.JRadioButton" name="level_F0">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="2"/>
+                    <Property name="text" type="java.lang.String" value="3 (F0)"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton11">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="3"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton12">
+                <Component class="javax.swing.JRadioButton" name="Cachly_TN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="T&#x1ea1;i nh&#xe0;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton13">
+                <Component class="javax.swing.JRadioButton" name="Cachly_KVCL">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="T&#x1ea1;i khu v&#x1ef1;c c&#xe1;ch ly "/>
                   </Properties>
@@ -1090,24 +1126,32 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel46" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jButton10" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jButton12" max="32767" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jButton11" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel46" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jTextField42" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="Show_PC_Btn" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="Delete_PC_Btn" max="32767" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="Change_PC_Btn" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="Search_IDNK_PC" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="340" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="ShowTabPane2" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1117,14 +1161,16 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTextField42" min="-2" max="-2" attributes="0"/>
+                          <Component id="Search_IDNK_PC" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton12" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Show_PC_Btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Change_PC_Btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Delete_PC_Btn" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="550" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="ShowTabPane2" pref="599" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1132,26 +1178,39 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel46">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="                                                                                        Nh&#x1ead;p ID nh&#xe2;n kh&#x1ea9;u"/>
+                    <Property name="text" type="java.lang.String" value="                                                                                        Nh&#x1ead;p ID nh&#xe2;n kh&#x1ea9;u "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField42">
+                <Component class="javax.swing.JTextField" name="Search_IDNK_PC">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton10">
+                <Component class="javax.swing.JButton" name="Show_PC_Btn">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Hi&#x1ec3;n th&#x1ecb;"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Show_PC_BtnActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton11">
+                <Component class="javax.swing.JButton" name="Change_PC_Btn">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Change_PC_BtnActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton12">
+                <Component class="javax.swing.JButton" name="Delete_PC_Btn">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Delete_PC_BtnActionPerformed"/>
+                  </Events>
                 </Component>
+                <Container class="javax.swing.JTabbedPane" name="ShowTabPane2">
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+                </Container>
               </SubComponents>
             </Container>
           </SubComponents>
