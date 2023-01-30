@@ -16,11 +16,9 @@ import java.sql.ResultSet;
  */
 public class NhanKhauDao {
     public boolean IsExist(String CCCD, String id) throws Exception{
-        String checkExist_sql = "SELECT * FROM nhankhau" +
-                            "  WHERE CCCD = ? OR idnhankhau = ?";
         try(
             Connection conn = DatabaseHelper.ConnectDB();
-            PreparedStatement checkPrepSt = conn.prepareStatement(checkExist_sql);    
+            PreparedStatement checkPrepSt = conn.prepareStatement(DatabaseHelper.CHECKEXIST_NK_SQL);    
             ){
             checkPrepSt.setString(1,CCCD);
             checkPrepSt.setString(2,id);
@@ -31,13 +29,10 @@ public class NhanKhauDao {
     }
     
     public void InsertNK(NhanKhau nk) throws Exception{
-        String insert_sql = "INSERT INTO `nhankhau` (`idnhankhau`, `hoten`, `ngaysinh`, `gioitinh`, `quanhevoichuho`,"
-                + "`quequan`, `dantoc`, `nghenghiep`, `CCCD`, `ngaydangkythuongtru`, `noidangkythuongtruchuyenden`, `ghichu`) "
-                + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
         
         try(
             Connection conn = DatabaseHelper.ConnectDB();
-            PreparedStatement insertPrepSt = conn.prepareStatement(insert_sql);
+            PreparedStatement insertPrepSt = conn.prepareStatement(DatabaseHelper.INSERT_NK_SQL);
         ){
             insertPrepSt.setString(1, nk.getIdNK());
             insertPrepSt.setString(2, nk.getHoTen());
@@ -57,12 +52,11 @@ public class NhanKhauDao {
     }
     
     public void InsertNK_HK(String idhokhau, String idnhankhau, String quanhe) throws Exception{        
-        String insert_Into_NK_HK_sql = "INSERT INTO `nhankhau_hokhau`(`idhokhau`, `idnhankhau`, `quanhevoichuho`)"+
-                                "VALUES (?, ?, ?)";
+        
         
         try(
             Connection conn = DatabaseHelper.ConnectDB();
-            PreparedStatement insertPrepSt = conn.prepareStatement(insert_Into_NK_HK_sql);
+            PreparedStatement insertPrepSt = conn.prepareStatement(DatabaseHelper.INSERT_NK_HK_SQL);
         ){
             insertPrepSt.setString(1, idhokhau);
             insertPrepSt.setString(2, idnhankhau);
@@ -73,11 +67,9 @@ public class NhanKhauDao {
     }
     
     public NhanKhau SearchNK(String ID) throws Exception{
-        String search_NK_sql = "SELECT * FROM `nhankhau` JOIN `nhankhau_hokhau` ON `nhankhau`.`idnhankhau` = `nhankhau_hokhau`.`idnhankhau`"+
-                            "  WHERE `nhankhau`.`idnhankhau` = ?";
         try(
             Connection conn = DatabaseHelper.ConnectDB();
-            PreparedStatement searchPrepSt = conn.prepareStatement(search_NK_sql);
+            PreparedStatement searchPrepSt = conn.prepareStatement(DatabaseHelper.SEARCH_NK_SQL);
         ){
             searchPrepSt.setString(1, ID);
 
@@ -107,20 +99,13 @@ public class NhanKhauDao {
     }
     
     public void DeleteNK(String ID) throws Exception{
-        String delete_sql1 = "DELETE FROM `nhankhau` WHERE `nhankhau`.`idnhankhau` = ?";
-        String delete_sql2 = "DELETE FROM `nhankhau_hokhau` WHERE `nhankhau_hokhau`.`idnhankhau` = ?";
-
         try(
             Connection conn = DatabaseHelper.ConnectDB();
-            PreparedStatement deletePrepSt1 = conn.prepareStatement(delete_sql1);
-            PreparedStatement deletePrepSt2 = conn.prepareStatement(delete_sql2);
-
+            PreparedStatement deletePrepSt = conn.prepareStatement(DatabaseHelper.DELETE_NK_SQL);
         ){
-            deletePrepSt1.setString(1, ID);
-            deletePrepSt2.setString(1, ID);
+//            deletePrepSt.setString(1, ID);
             
-            deletePrepSt1.execute();
-            deletePrepSt2.execute();
+            deletePrepSt.execute();
         }
     }
 }

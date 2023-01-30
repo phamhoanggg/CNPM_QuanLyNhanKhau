@@ -1,5 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ /* Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.quanlynhankhau.ui;
@@ -7,8 +6,12 @@ package com.mycompany.quanlynhankhau.ui;
 import com.mycompany.quanlynhankhau.Helpers.DataValidator;
 import com.mycompany.quanlynhankhau.Helpers.MessageDialogHelper;
 import com.mycompany.quanlynhankhau.Helpers.ShareData;
+import com.mycompany.quanlynhankhau.Thongtin.CachLy;
+import com.mycompany.quanlynhankhau.Thongtin.HoKhau;
 import com.mycompany.quanlynhankhau.Thongtin.NguoiQuanLy;
 import com.mycompany.quanlynhankhau.Thongtin.NhanKhau;
+import com.mycompany.quanlynhankhau.dao.CachLyDao;
+import com.mycompany.quanlynhankhau.dao.HoKhauDao;
 import com.mycompany.quanlynhankhau.dao.NhanKhauDao;
 import static com.sun.corba.se.impl.util.Utility.printStackTrace;
 
@@ -25,6 +28,24 @@ public class HomepageForm extends javax.swing.JFrame {
         initComponents();
         
         setLocationRelativeTo(null);
+        SetTestDone(false);
+        SetPositive(false);
+    }
+    
+    private void SetTestDone(boolean isEditable){
+        isPositive_radio.setEnabled(isEditable);
+        isNegative_radio.setEnabled(isEditable);
+        insert_methodTest_PC_text.setEditable(isEditable);
+        insert_timeTest_PC_text.setEditable(isEditable);
+    }
+    
+    private void SetPositive(boolean isEditable){
+        insert_startTimeCL_PC_text.setEditable(isEditable);
+        Cachly_TN_radio.setEnabled(isEditable);
+        Cachly_KVCL_radio.setEnabled(isEditable);
+        level_F0_radio.setEnabled(isEditable);
+        level_F1_radio.setEnabled(isEditable);
+        level_F2_radio.setEnabled(isEditable);
     }
 
     /**
@@ -36,8 +57,12 @@ public class HomepageForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        NK_Gender_BtnGroup = new javax.swing.ButtonGroup();
         jLabel2 = new javax.swing.JLabel();
+        PC_TestResult_BtnGroup = new javax.swing.ButtonGroup();
+        PC_TestDone_BtnGroup = new javax.swing.ButtonGroup();
+        PC_QuarantineState_BtnGroup = new javax.swing.ButtonGroup();
+        PC_QuarantineLevel_BtnGroup = new javax.swing.ButtonGroup();
         jLabel9 = new javax.swing.JLabel();
         HK_Tab = new javax.swing.JTabbedPane();
         jTabbedPane5 = new javax.swing.JTabbedPane();
@@ -78,67 +103,42 @@ public class HomepageForm extends javax.swing.JFrame {
         Delete_NK_Btn = new javax.swing.JButton();
         ShowTabPane = new javax.swing.JTabbedPane();
         jTabbedPane6 = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
-        jLabel24 = new javax.swing.JLabel();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
-        jLabel25 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jTextField23 = new javax.swing.JTextField();
-        jLabel30 = new javax.swing.JLabel();
-        jTextField27 = new javax.swing.JTextField();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel45 = new javax.swing.JLabel();
-        jTextField41 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        Search_ID_HK = new javax.swing.JTextField();
+        Show_HK_Btn = new javax.swing.JButton();
+        Change_HK_Btn = new javax.swing.JButton();
+        ShowTabPane1 = new javax.swing.JTabbedPane();
         jTabbedPane7 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
-        jTextField28 = new javax.swing.JTextField();
+        insert_IDHK_PC_text = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jTextField31 = new javax.swing.JTextField();
-        jTextField32 = new javax.swing.JTextField();
+        insert_IDNK_PC_text = new javax.swing.JTextField();
+        insert_name_PC_text = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
-        jTextField33 = new javax.swing.JTextField();
-        jTextField34 = new javax.swing.JTextField();
-        jButton8 = new javax.swing.JButton();
+        insert_methodTest_PC_text = new javax.swing.JTextField();
+        insert_timeTest_PC_text = new javax.swing.JTextField();
+        insert_submit_PC_Btn = new javax.swing.JButton();
         jLabel39 = new javax.swing.JLabel();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jTextField35 = new javax.swing.JTextField();
+        done_test = new javax.swing.JRadioButton();
+        notdone_test = new javax.swing.JRadioButton();
+        insert_CCCD_PC_text = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jTextField40 = new javax.swing.JTextField();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jLabel28 = new javax.swing.JLabel();
+        insert_startTimeCL_PC_text = new javax.swing.JTextField();
+        isPositive_radio = new javax.swing.JRadioButton();
+        isNegative_radio = new javax.swing.JRadioButton();
         jLabel23 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jRadioButton9 = new javax.swing.JRadioButton();
-        jRadioButton10 = new javax.swing.JRadioButton();
-        jRadioButton11 = new javax.swing.JRadioButton();
-        jRadioButton12 = new javax.swing.JRadioButton();
-        jRadioButton13 = new javax.swing.JRadioButton();
+        level_F2_radio = new javax.swing.JRadioButton();
+        level_F1_radio = new javax.swing.JRadioButton();
+        level_F0_radio = new javax.swing.JRadioButton();
+        Cachly_TN_radio = new javax.swing.JRadioButton();
+        Cachly_KVCL_radio = new javax.swing.JRadioButton();
         jPanel8 = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         jTextField42 = new javax.swing.JTextField();
@@ -146,6 +146,7 @@ public class HomepageForm extends javax.swing.JFrame {
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jTabbedPane8 = new javax.swing.JTabbedPane();
+        LogOut_Btn = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -245,10 +246,10 @@ public class HomepageForm extends javax.swing.JFrame {
 
         jLabel15.setText("Ghi chú");
 
-        buttonGroup1.add(isMale);
+        NK_Gender_BtnGroup.add(isMale);
         isMale.setText("Nam");
 
-        buttonGroup1.add(isFemale);
+        NK_Gender_BtnGroup.add(isFemale);
         isFemale.setText("Nữ");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -256,7 +257,7 @@ public class HomepageForm extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+                .addContainerGap(88, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -280,7 +281,7 @@ public class HomepageForm extends javax.swing.JFrame {
                                 .addComponent(isMale)
                                 .addGap(18, 18, 18)
                                 .addComponent(isFemale)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 172, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -297,7 +298,7 @@ public class HomepageForm extends javax.swing.JFrame {
                                 .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(insert_noiDKTT_text, javax.swing.GroupLayout.Alignment.TRAILING))
                             .addComponent(insert_note_text, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -359,7 +360,7 @@ public class HomepageForm extends javax.swing.JFrame {
                 .addComponent(insert_note_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addComponent(insert_submit_NK_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {insert_CCCD_NK_text, insert_DoB_NK_text, insert_Ethnic_NK_text, insert_Hometown_NK_text, insert_ID_HK_text, insert_ID_NK_text, insert_Job_NK_text, insert_Name_NK_text, insert_Relation_NK_text, insert_ngayDKTT_text, insert_noiDKTT_text, insert_note_text});
@@ -399,18 +400,17 @@ public class HomepageForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 192, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(Show_NK_Btn)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(Delete_NK_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(Change_NK_Btn))
-                                .addComponent(search_ID_NK, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 301, Short.MAX_VALUE))
+                        .addGap(0, 263, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Show_NK_Btn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Delete_NK_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Change_NK_Btn))
+                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(search_ID_NK))
+                        .addGap(0, 264, Short.MAX_VALUE))
                     .addComponent(ShowTabPane))
                 .addContainerGap())
         );
@@ -427,7 +427,7 @@ public class HomepageForm extends javax.swing.JFrame {
                     .addComponent(Change_NK_Btn)
                     .addComponent(Delete_NK_Btn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ShowTabPane, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
+                .addComponent(ShowTabPane, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -437,198 +437,58 @@ public class HomepageForm extends javax.swing.JFrame {
 
         jTabbedPane6.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
 
-        jPanel3.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel47.setText("Nhập ID hộ khẩu");
 
-        jLabel17.setText("Tuổi");
-
-        jLabel18.setText("Ngày sinh");
-
-        jLabel19.setText("ID nhân khẩu chủ hộ");
-
-        jLabel20.setText("Quê quán");
-
-        jLabel21.setText("ID hộ khẩu");
-
-        jLabel24.setText("Họ và tên chủ hộ");
-
-        jTextField21.addActionListener(new java.awt.event.ActionListener() {
+        Show_HK_Btn.setText("Hiển thị");
+        Show_HK_Btn.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        Show_HK_Btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField21ActionPerformed(evt);
+                Show_HK_BtnActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Gửi");
+        Change_HK_Btn.setText("Sửa");
+        Change_HK_Btn.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        jLabel25.setText("Giới tính");
-
-        jRadioButton3.setText("Nam");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
-            }
-        });
-
-        jRadioButton4.setText("Nữ");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
-            }
-        });
-
-        jLabel26.setText("Dân tộc");
-
-        jLabel27.setText("CCCD chủ hộ");
-
-        jTextField23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField23ActionPerformed(evt);
-            }
-        });
-
-        jLabel30.setText("Ghi chú");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField16)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField20)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField19)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField18, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField23)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(jTextField15, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(jTextField17, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(jTextField21, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton7))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField27)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel21)
-                            .addComponent(jLabel19))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel27))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9))
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel20))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel26))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel30))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(214, Short.MAX_VALUE))
-        );
-
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jTextField15, jTextField16, jTextField17, jTextField18, jTextField19, jTextField20, jTextField21, jTextField23, jTextField27});
-
-        jTabbedPane6.addTab("Thêm", jPanel3);
-
-        jLabel45.setText("                                                                                        Nhập ID hộ khẩu");
-
-        jButton4.setText("In");
-
-        jButton5.setText("Sửa");
-
-        jButton9.setText("Xóa");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(ShowTabPane1))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addContainerGap(265, Short.MAX_VALUE)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(Show_HK_Btn)
+                                .addGap(114, 114, 114)
+                                .addComponent(Change_HK_Btn))
+                            .addComponent(Search_ID_HK))
+                        .addGap(0, 268, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(211, 211, 211)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton5))
-                    .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel45)
+                .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Search_ID_HK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton9))
-                .addContainerGap(550, Short.MAX_VALUE))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Show_HK_Btn)
+                    .addComponent(Change_HK_Btn))
+                .addGap(18, 18, 18)
+                .addComponent(ShowTabPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jTabbedPane6.addTab("Hiển thị", jPanel7);
+        jTabbedPane6.addTab("Hiển thị", jPanel9);
 
         HK_Tab.addTab("Hộ khẩu", jTabbedPane6);
 
@@ -650,197 +510,215 @@ public class HomepageForm extends javax.swing.JFrame {
 
         jLabel38.setText("Họ và tên");
 
-        jTextField34.addActionListener(new java.awt.event.ActionListener() {
+        insert_timeTest_PC_text.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField34ActionPerformed(evt);
+                insert_timeTest_PC_textActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Gửi");
+        insert_submit_PC_Btn.setText("Gửi");
+        insert_submit_PC_Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insert_submit_PC_BtnActionPerformed(evt);
+            }
+        });
 
         jLabel39.setText("Hình thức kiểm tra");
 
-        jRadioButton5.setText("Đã thực hiện");
-        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+        PC_TestDone_BtnGroup.add(done_test);
+        done_test.setText("Đã thực hiện");
+        done_test.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton5ActionPerformed(evt);
+                done_testActionPerformed(evt);
             }
         });
 
-        jRadioButton6.setText("Chưa thực hiện");
-        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
+        PC_TestDone_BtnGroup.add(notdone_test);
+        notdone_test.setText("Chưa thực hiện");
+        notdone_test.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton6ActionPerformed(evt);
+                notdone_testActionPerformed(evt);
             }
         });
 
-        jTextField35.addActionListener(new java.awt.event.ActionListener() {
+        insert_CCCD_PC_text.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField35ActionPerformed(evt);
+                insert_CCCD_PC_textActionPerformed(evt);
             }
         });
 
         jLabel40.setText("Thời gian kiểm tra");
 
-        jLabel44.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel44.setText("Nếu dương tính điền thông tin bên dưới");
-
-        jRadioButton7.setText("Dương tính");
-
-        jRadioButton8.setText("Âm tính");
-        jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
+        PC_TestResult_BtnGroup.add(isPositive_radio);
+        isPositive_radio.setText("Dương tính");
+        isPositive_radio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton8ActionPerformed(evt);
+                isPositive_radioActionPerformed(evt);
             }
         });
 
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel28.setText("Nếu đã thực hiện điền thông tin bên dưới");
+        PC_TestResult_BtnGroup.add(isNegative_radio);
+        isNegative_radio.setText("Âm tính");
+        isNegative_radio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                isNegative_radioActionPerformed(evt);
+            }
+        });
 
         jLabel23.setText("Mức độ cách ly");
 
         jLabel22.setText("Trạng thái cách ly");
 
-        jRadioButton9.setText("1");
+        PC_QuarantineLevel_BtnGroup.add(level_F2_radio);
+        level_F2_radio.setText("1 (F2)");
+        level_F2_radio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                level_F2_radioActionPerformed(evt);
+            }
+        });
 
-        jRadioButton10.setText("2");
+        PC_QuarantineLevel_BtnGroup.add(level_F1_radio);
+        level_F1_radio.setText("2 (F1)");
 
-        jRadioButton11.setText("3");
+        PC_QuarantineLevel_BtnGroup.add(level_F0_radio);
+        level_F0_radio.setText("3 (F0)");
+        level_F0_radio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                level_F0_radioActionPerformed(evt);
+            }
+        });
 
-        jRadioButton12.setText("Tại nhà");
+        PC_QuarantineState_BtnGroup.add(Cachly_TN_radio);
+        Cachly_TN_radio.setText("Tại nhà");
 
-        jRadioButton13.setText("Tại khu vực cách ly ");
+        PC_QuarantineState_BtnGroup.add(Cachly_KVCL_radio);
+        Cachly_KVCL_radio.setText("Tại khu vực cách ly ");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap(63, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jRadioButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField40)
+                            .addComponent(insert_startTimeCL_PC_text)
                             .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField31)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jRadioButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(done_test)
+                                .addGap(18, 18, 18)
+                                .addComponent(notdone_test))
                             .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField32)
+                            .addComponent(insert_name_PC_text)
                             .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jRadioButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField33, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField35)
-                            .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField28, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField34)
-                            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(insert_methodTest_PC_text, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(insert_IDNK_PC_text)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jRadioButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(isPositive_radio, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(isNegative_radio, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(Cachly_TN_radio, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton8)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(Cachly_KVCL_radio, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+                                .addComponent(insert_timeTest_PC_text)
+                                .addComponent(insert_CCCD_PC_text, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(insert_IDHK_PC_text, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(level_F1_radio, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(level_F0_radio, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(level_F2_radio, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(insert_submit_PC_Btn)
+                        .addGap(242, 242, 242)))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
+
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {level_F0_radio, level_F1_radio, level_F2_radio});
+
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel35)
-                            .addComponent(jLabel33))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel38)
-                            .addComponent(jLabel36))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9))
-                    .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel33))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(insert_IDNK_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insert_IDHK_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel36))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(insert_CCCD_PC_text)
+                    .addComponent(insert_name_PC_text))
+                .addGap(11, 11, 11)
                 .addComponent(jLabel31)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6))
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel28)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel34)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton7)
-                            .addComponent(jRadioButton8))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel39))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jLabel40)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(done_test)
+                    .addComponent(notdone_test))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel34)
+                .addGap(7, 7, 7)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(isPositive_radio)
+                    .addComponent(isNegative_radio))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel44)
-                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(jLabel40))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(insert_methodTest_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insert_timeTest_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
                     .addComponent(jLabel23))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton9)
-                    .addComponent(jRadioButton10)
-                    .addComponent(jRadioButton11))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel22)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(insert_startTimeCL_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(level_F2_radio))
+                .addGap(9, 9, 9)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton12)
-                    .addComponent(jRadioButton13))
-                .addGap(18, 18, 18)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel22)
+                    .addComponent(level_F1_radio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Cachly_TN_radio)
+                    .addComponent(Cachly_KVCL_radio)
+                    .addComponent(level_F0_radio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(insert_submit_PC_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
-        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jTextField28, jTextField31, jTextField32, jTextField33, jTextField34, jTextField35, jTextField40});
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {insert_CCCD_PC_text, insert_IDHK_PC_text, insert_IDNK_PC_text, insert_methodTest_PC_text, insert_startTimeCL_PC_text, insert_timeTest_PC_text});
+
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {level_F0_radio, level_F1_radio, level_F2_radio});
 
         jTabbedPane7.addTab("Thêm", jPanel5);
 
-        jLabel46.setText("                                                                                        Nhập ID nhân khẩu");
+        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel46.setText("Nhập ID nhân khẩu");
 
-        jButton10.setText("In");
+        jButton10.setText("Hiển thị");
 
         jButton11.setText("Sửa");
 
@@ -851,19 +729,16 @@ public class HomepageForm extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(211, 211, 211)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField42)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jButton10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton11))
-                    .addComponent(jTextField42, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton11)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -878,7 +753,7 @@ public class HomepageForm extends javax.swing.JFrame {
                     .addComponent(jButton10)
                     .addComponent(jButton11)
                     .addComponent(jButton12))
-                .addContainerGap(550, Short.MAX_VALUE))
+                .addContainerGap(526, Short.MAX_VALUE))
         );
 
         jTabbedPane7.addTab("Hiển thị", jPanel8);
@@ -886,19 +761,34 @@ public class HomepageForm extends javax.swing.JFrame {
         HK_Tab.addTab("Phòng Covid", jTabbedPane7);
         HK_Tab.addTab("Thông báo", jTabbedPane8);
 
+        LogOut_Btn.setText("Đăng xuất");
+        LogOut_Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogOut_BtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(HK_Tab)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(HK_Tab))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LogOut_Btn)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(HK_Tab)
+                .addComponent(LogOut_Btn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(HK_Tab, javax.swing.GroupLayout.PREFERRED_SIZE, 733, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -908,10 +798,6 @@ public class HomepageForm extends javax.swing.JFrame {
     private void insert_Ethnic_NK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_Ethnic_NK_textActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_insert_Ethnic_NK_textActionPerformed
-
-    private void insert_ID_HK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_ID_HK_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_insert_ID_HK_textActionPerformed
 
     private void insert_Job_NK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_Job_NK_textActionPerformed
         // TODO add your handling code here:
@@ -925,41 +811,28 @@ public class HomepageForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_insert_noiDKTT_textActionPerformed
 
-    private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
+    private void insert_timeTest_PC_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_timeTest_PC_textActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField21ActionPerformed
+    }//GEN-LAST:event_insert_timeTest_PC_textActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    private void done_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_done_testActionPerformed
+        SetTestDone(true);
+    }//GEN-LAST:event_done_testActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    private void notdone_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notdone_testActionPerformed
+        insert_methodTest_PC_text.setText("");
+        insert_timeTest_PC_text.setText("");
+        SetTestDone(false);
+    }//GEN-LAST:event_notdone_testActionPerformed
 
-    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
+    private void insert_CCCD_PC_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_CCCD_PC_textActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField23ActionPerformed
+    }//GEN-LAST:event_insert_CCCD_PC_textActionPerformed
 
-    private void jTextField34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField34ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField34ActionPerformed
-
-    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton5ActionPerformed
-
-    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton6ActionPerformed
-
-    private void jTextField35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField35ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField35ActionPerformed
-
-    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton8ActionPerformed
+    private void isNegative_radioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isNegative_radioActionPerformed
+        SetPositive(false);
+        insert_startTimeCL_PC_text.setText("");
+    }//GEN-LAST:event_isNegative_radioActionPerformed
 
     private void insert_submit_NK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_submit_NK_BtnActionPerformed
         StringBuilder sb = new StringBuilder();
@@ -982,11 +855,14 @@ public class HomepageForm extends javax.swing.JFrame {
             return;
         
         }
-        NhanKhauDao dao = new NhanKhauDao();
+        NhanKhauDao nkdao = new NhanKhauDao();
+        HoKhauDao hkdao = new HoKhauDao();
         try{
             
-            if (dao.IsExist(insert_CCCD_NK_text.getText(), insert_ID_NK_text.getText())){
+            if (nkdao.IsExist(insert_CCCD_NK_text.getText(), insert_ID_NK_text.getText())){
                 MessageDialogHelper.showErrorDialog(this, "Nhân khẩu đã tồn tại", "Lỗi");
+            }else if(!hkdao.IsExist("0", insert_ID_HK_text.getText()) && !insert_Relation_NK_text.getText().equals("Chủ hộ")){
+                MessageDialogHelper.showErrorDialog(this, "Hộ khẩu tương ứng không tồn tại hoặc chưa có chủ hộ!", "Lỗi");
             }else{
                 MessageDialogHelper.showMessageDialog(this, "Thêm nhân khẩu thành công!", "Thành công");
                 String gentle = isMale.isSelected() ? "Nam" : "Nữ";
@@ -995,11 +871,26 @@ public class HomepageForm extends javax.swing.JFrame {
                                             insert_Hometown_NK_text.getText(), insert_Ethnic_NK_text.getText(), insert_Job_NK_text.getText(),
                                             insert_ngayDKTT_text.getText(), insert_noiDKTT_text.getText(), insert_note_text.getText());
                 
-                dao.InsertNK(nk);
-                dao.InsertNK_HK(insert_ID_HK_text.getText(), insert_ID_NK_text.getText(), nk.getQuanHeVoiChuHo());
+                nkdao.InsertNK(nk);
+                nkdao.InsertNK_HK(insert_ID_HK_text.getText(), insert_ID_NK_text.getText(), nk.getQuanHeVoiChuHo());
+                if (insert_Relation_NK_text.getText().equals("Chủ hộ")){                  
+                    try{
+                        if (hkdao.IsExist(insert_CCCD_NK_text.getText(), insert_ID_HK_text.getText())){
+                            MessageDialogHelper.showErrorDialog(this, "Hộ khẩu đã tồn tại", "Lỗi");
+                        }else{           
+                            HoKhau hk = new HoKhau(insert_ID_HK_text.getText(), insert_CCCD_NK_text.getText(), 
+                                                  insert_Name_NK_text.getText(), insert_DoB_NK_text.getText(),
+                                                insert_Hometown_NK_text.getText(), insert_note_text.getText());
+
+                            hkdao.InsertHK(hk);
+                        }
+                    }catch (Exception e){
+                        printStackTrace();
+                        MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
+                    } 
+                }
             }
         }catch (Exception e){
-            printStackTrace();
             MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
         } 
     }//GEN-LAST:event_insert_submit_NK_BtnActionPerformed
@@ -1024,9 +915,14 @@ public class HomepageForm extends javax.swing.JFrame {
                     dao.DeleteNK(nk.getIdNK());
                     MessageDialogHelper.showMessageDialog(this, "Xóa nhân khẩu thành công!", "Thành công");
                 }
+                
+                if (nk.getQuanHeVoiChuHo().equals("Chủ hộ")){
+                    HoKhauDao hkdao = new HoKhauDao();
+                    hkdao.DeleteHK(nk.getIdHK());
+                }
             }
         }catch (Exception e){
-            printStackTrace();
+
             MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
         }      
         
@@ -1054,7 +950,6 @@ public class HomepageForm extends javax.swing.JFrame {
                 ShowTabPane.addTab("Hiển thị", infoTab);
             }
         }catch (Exception e){
-            printStackTrace();
             MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
         }      
     }//GEN-LAST:event_Show_NK_BtnActionPerformed
@@ -1080,7 +975,6 @@ public class HomepageForm extends javax.swing.JFrame {
                 ShowTabPane.addTab("Chỉnh sửa", infoTab);
             }
         }catch (Exception e){
-            printStackTrace();
             MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
         }      
     }//GEN-LAST:event_Change_NK_BtnActionPerformed
@@ -1101,38 +995,162 @@ public class HomepageForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_insert_ngayDKTT_textFocusGained
 
+    private void insert_ID_HK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_ID_HK_textActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_insert_ID_HK_textActionPerformed
+
+    private void Show_HK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_HK_BtnActionPerformed
+        StringBuilder sb = new StringBuilder();
+        DataValidator.validateEmpty(Search_ID_HK, sb, "Vui lòng nhập ID hộ khẩu cần hiển thị!");
+
+        if (sb.length() > 0){
+            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
+            return;
+        }
+
+        HoKhauDao dao = new HoKhauDao();
+        try{
+            HoKhau hk = dao.SearchHK(Search_ID_HK.getText());
+            if (hk == null){
+                MessageDialogHelper.showErrorDialog(this, "Hộ khẩu không tồn tại!", "Lỗi");
+            }else{
+                HK_Info infoTab = new HK_Info(hk);
+                infoTab.SetEditableTextField(false);
+                ShowTabPane1.removeAll();
+                ShowTabPane1.addTab("Hiển thị", infoTab);
+            }
+        }catch (Exception e){
+            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
+        }
+    }//GEN-LAST:event_Show_HK_BtnActionPerformed
+
+    private void insert_submit_PC_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_submit_PC_BtnActionPerformed
+        StringBuilder sb = new StringBuilder();
+        DataValidator.validateEmpty(insert_IDNK_PC_text, sb, "Vui lòng nhập ID nhân khẩu!");  
+        DataValidator.validateEmpty(insert_IDHK_PC_text, sb, "Vui lòng nhập ID hộ khẩu!"); 
+        DataValidator.validateEmpty(insert_name_PC_text, sb, "Vui lòng nhập họ và tên!");
+        DataValidator.validateEmpty(insert_CCCD_PC_text, sb, "Vui lòng nhập CCCD!");
+        
+        if (!done_test.isSelected() && !notdone_test.isSelected()){
+            sb.append("Vui lòng cho biết đã test Covid-19 chưa!\n");
+        }
+// If have tested       
+        if (done_test.isSelected()){
+            if (!isPositive_radio.isSelected() && !isNegative_radio.isSelected()){
+                sb.append("Vui lòng cho biết kết quả test Covid-19!\n");
+            }
+            DataValidator.validateEmpty(insert_methodTest_PC_text, sb, "Vui lòng nhập hình thức test Covid-19!"); 
+            DataValidator.validateEmpty(insert_timeTest_PC_text, sb, "Vui lòng nhập thời gian kiểm tra Covid-19!");
+        }
+// If test result is positive
+        if (isPositive_radio.isSelected()){
+            if (!Cachly_TN_radio.isSelected() && !Cachly_KVCL_radio.isSelected()){
+                sb.append("Vui lòng cho biết trạng thái cách ly Covid-19!\n");
+            }
+
+            if (!level_F2_radio.isSelected() && !level_F1_radio.isSelected() && !level_F0_radio.isSelected()){
+                sb.append("Vui lòng cho biết mức độ cách ly Covid-19 của bạn!\n");
+            }
+            DataValidator.validateEmpty(insert_startTimeCL_PC_text, sb, "Vui lòng nhập thời gian bắt đầu cách ly!");
+        }
+// If sb has content => error        
+        if (sb.length() > 0){
+            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
+            return;
+        }
+        
+        CachLyDao dao = new CachLyDao();
+        try{
+            
+            if (dao.IsExist(insert_CCCD_PC_text.getText(), insert_IDNK_PC_text.getText())){
+                MessageDialogHelper.showErrorDialog(this, "Thông tin nhân khẩu đã tồn tại, hãy cập nhật", "Lỗi");
+            }else{
+                MessageDialogHelper.showMessageDialog(this, "Thêm thông tin thành công!", "Thành công");
+                String test = done_test.isSelected() ? "Đã thực hiện" : "Chưa thực hiện";
+                String result = isPositive_radio.isSelected() ? "Dương tính" : "Âm tính";               
+                String status = Cachly_TN_radio.isSelected() ? "Tại nhà" : "Tại khu vực cách ly";
+                String level;
+                if(level_F2_radio.isSelected()) level = "1(F2)";
+                else if(level_F1_radio.isSelected()) level = "1(F1)";
+                else level = "3(F0)";
+                CachLy cl = new CachLy(insert_IDNK_PC_text.getText(), insert_IDHK_PC_text.getText(), insert_CCCD_PC_text.getText(), 
+                                            insert_name_PC_text.getText(), test, result,insert_timeTest_PC_text.getText(), 
+                                            insert_methodTest_PC_text.getText(), insert_startTimeCL_PC_text.getText(), level, status);
+                
+                dao.InsertCL(cl);                
+            }
+        }catch (Exception e){
+            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
+        } 
+    }//GEN-LAST:event_insert_submit_PC_BtnActionPerformed
+
+    private void level_F0_radioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level_F0_radioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_level_F0_radioActionPerformed
+
+    private void level_F2_radioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level_F2_radioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_level_F2_radioActionPerformed
+
+    private void isPositive_radioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isPositive_radioActionPerformed
+        SetPositive(true);
+    }//GEN-LAST:event_isPositive_radioActionPerformed
+
+    private void LogOut_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOut_BtnActionPerformed
+        LoginForm login = new LoginForm();
+        login.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_LogOut_BtnActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton Cachly_KVCL_radio;
+    private javax.swing.JRadioButton Cachly_TN_radio;
+    private javax.swing.JButton Change_HK_Btn;
     private javax.swing.JButton Change_NK_Btn;
     private javax.swing.JButton Delete_NK_Btn;
     private javax.swing.JTabbedPane HK_Tab;
+    private javax.swing.JButton LogOut_Btn;
+    private javax.swing.ButtonGroup NK_Gender_BtnGroup;
+    private javax.swing.ButtonGroup PC_QuarantineLevel_BtnGroup;
+    private javax.swing.ButtonGroup PC_QuarantineState_BtnGroup;
+    private javax.swing.ButtonGroup PC_TestDone_BtnGroup;
+    private javax.swing.ButtonGroup PC_TestResult_BtnGroup;
+    private javax.swing.JTextField Search_ID_HK;
     private javax.swing.JTabbedPane ShowTabPane;
+    private javax.swing.JTabbedPane ShowTabPane1;
+    private javax.swing.JButton Show_HK_Btn;
     private javax.swing.JButton Show_NK_Btn;
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JRadioButton done_test;
     private javax.swing.JTextField insert_CCCD_NK_text;
+    private javax.swing.JTextField insert_CCCD_PC_text;
     private javax.swing.JTextField insert_DoB_NK_text;
     private javax.swing.JTextField insert_Ethnic_NK_text;
     private javax.swing.JTextField insert_Hometown_NK_text;
+    private javax.swing.JTextField insert_IDHK_PC_text;
+    private javax.swing.JTextField insert_IDNK_PC_text;
     private javax.swing.JTextField insert_ID_HK_text;
     private javax.swing.JTextField insert_ID_NK_text;
     private javax.swing.JTextField insert_Job_NK_text;
     private javax.swing.JTextField insert_Name_NK_text;
     private javax.swing.JTextField insert_Relation_NK_text;
+    private javax.swing.JTextField insert_methodTest_PC_text;
+    private javax.swing.JTextField insert_name_PC_text;
     private javax.swing.JTextField insert_ngayDKTT_text;
     private javax.swing.JTextField insert_noiDKTT_text;
     private javax.swing.JTextField insert_note_text;
+    private javax.swing.JTextField insert_startTimeCL_PC_text;
     private javax.swing.JButton insert_submit_NK_Btn;
+    private javax.swing.JButton insert_submit_PC_Btn;
+    private javax.swing.JTextField insert_timeTest_PC_text;
     private javax.swing.JRadioButton isFemale;
     private javax.swing.JRadioButton isMale;
+    private javax.swing.JRadioButton isNegative_radio;
+    private javax.swing.JRadioButton isPositive_radio;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1141,21 +1159,10 @@ public class HomepageForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -1166,9 +1173,8 @@ public class HomepageForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1176,43 +1182,20 @@ public class HomepageForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JRadioButton jRadioButton10;
-    private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton13;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTabbedPane jTabbedPane6;
     private javax.swing.JTabbedPane jTabbedPane7;
     private javax.swing.JTabbedPane jTabbedPane8;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField40;
-    private javax.swing.JTextField jTextField41;
     private javax.swing.JTextField jTextField42;
+    private javax.swing.JRadioButton level_F0_radio;
+    private javax.swing.JRadioButton level_F1_radio;
+    private javax.swing.JRadioButton level_F2_radio;
+    private javax.swing.JRadioButton notdone_test;
     private javax.swing.JTextField search_ID_NK;
     // End of variables declaration//GEN-END:variables
+
+
 }

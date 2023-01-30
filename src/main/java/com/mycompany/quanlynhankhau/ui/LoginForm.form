@@ -37,7 +37,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="rememberpwcheck" min="-2" max="-2" attributes="0"/>
+                          <Component id="rememberpw_check" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="usernameText" max="32767" attributes="0"/>
                               <Component id="passwordText" pref="367" max="32767" attributes="0"/>
@@ -71,7 +71,7 @@
                   <Component id="passwordText" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="rememberpwcheck" min="-2" max="-2" attributes="0"/>
+              <Component id="rememberpw_check" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="loginBtn" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -104,13 +104,19 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="usernameText">
+      <Events>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="usernameTextFocusLost"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="passwordText">
       <Properties>
         <Property name="text" type="java.lang.String" value="jPasswordField1"/>
       </Properties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="passwordTextFocusGained"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="rememberpwcheck">
+    <Component class="javax.swing.JCheckBox" name="rememberpw_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Remember password"/>
       </Properties>

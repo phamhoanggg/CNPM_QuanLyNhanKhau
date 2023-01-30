@@ -17,6 +17,7 @@ import static com.sun.corba.se.impl.util.Utility.printStackTrace;
  */
 public class LoginForm extends javax.swing.JFrame {
 
+    NguoiQuanLyDao dao = new NguoiQuanLyDao();
     /**
      * Creates new form LoginForm
      */
@@ -40,7 +41,7 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         usernameText = new javax.swing.JTextField();
         passwordText = new javax.swing.JPasswordField();
-        rememberpwcheck = new javax.swing.JCheckBox();
+        rememberpw_check = new javax.swing.JCheckBox();
         loginBtn = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
 
@@ -55,9 +56,20 @@ public class LoginForm extends javax.swing.JFrame {
 
         jLabel3.setText("Password");
 
-        passwordText.setText("jPasswordField1");
+        usernameText.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                usernameTextFocusLost(evt);
+            }
+        });
 
-        rememberpwcheck.setText("Remember password");
+        passwordText.setText("jPasswordField1");
+        passwordText.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passwordTextFocusGained(evt);
+            }
+        });
+
+        rememberpw_check.setText("Remember password");
 
         loginBtn.setText("Login");
         loginBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +101,7 @@ public class LoginForm extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(80, 80, 80)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rememberpwcheck)
+                            .addComponent(rememberpw_check)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(usernameText)
                                 .addComponent(passwordText, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE))))
@@ -114,7 +126,7 @@ public class LoginForm extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rememberpwcheck)
+                .addComponent(rememberpw_check)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginBtn)
@@ -139,13 +151,14 @@ public class LoginForm extends javax.swing.JFrame {
         
         }
         
-        NguoiQuanLyDao dao = new NguoiQuanLyDao();
+        
         try{
             NguoiQuanLy admin = dao.checkLogin(usernameText.getText(), new String(passwordText.getPassword()));
             if (admin == null){
                 MessageDialogHelper.showErrorDialog(this, "Sai tên đăng nhập hoặc mật khẩu!", "Lỗi");
             }else{
                 MessageDialogHelper.showMessageDialog(this, "Đăng nhập thành công!", "Thành công!");
+                dao.SetRememberPassword(rememberpw_check.isSelected(), usernameText.getText());
                 HomepageForm homePage = new HomepageForm();
                 homePage.setVisible(true);
                 ShareData.NguoiDangNhap = admin;
@@ -156,6 +169,28 @@ public class LoginForm extends javax.swing.JFrame {
             MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
         }
     }//GEN-LAST:event_loginBtnActionPerformed
+
+    private void passwordTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordTextFocusGained
+        try{
+            if (dao.GetRememberPassword(usernameText.getText()) == null)
+            passwordText.setText("");
+        }catch (Exception e){
+            printStackTrace();
+            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
+        }
+    }//GEN-LAST:event_passwordTextFocusGained
+
+    private void usernameTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFocusLost
+        try{
+            if (dao.GetRememberPassword(usernameText.getText()) != null){
+                passwordText.setText(dao.GetRememberPassword(usernameText.getText()));
+                rememberpw_check.setSelected(true);
+            }          
+        }catch(Exception e){
+            printStackTrace();
+            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
+        }
+    }//GEN-LAST:event_usernameTextFocusLost
 
     /**
      * @param args the command line arguments
@@ -199,7 +234,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton loginBtn;
     private javax.swing.JPasswordField passwordText;
-    private javax.swing.JCheckBox rememberpwcheck;
+    private javax.swing.JCheckBox rememberpw_check;
     private javax.swing.JTextField usernameText;
     // End of variables declaration//GEN-END:variables
 }

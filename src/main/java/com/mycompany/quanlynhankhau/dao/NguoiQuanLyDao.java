@@ -17,12 +17,9 @@ import java.sql.SQLException;
  */
 public class NguoiQuanLyDao {
     public NguoiQuanLy checkLogin(String username, String password) throws SQLException{
-
-        String sql = "select username, password from users "+
-                "  where username = ? and password = ?";
         try(
             Connection conn = DatabaseHelper.ConnectDB();
-            PreparedStatement prepSt = conn.prepareStatement(sql);
+            PreparedStatement prepSt = conn.prepareStatement(DatabaseHelper.CHECKLOGIN_SQL);
         ){
             prepSt.setString(1, username);
             prepSt.setString(2, password);
@@ -32,6 +29,41 @@ public class NguoiQuanLyDao {
                 if(rs.next()){
                     NguoiQuanLy nql = new NguoiQuanLy(username, password);
                     return nql;
+                }    
+            }
+        }
+        return null;
+    }
+    
+    public void SetRememberPassword(boolean isRemember, String username) throws Exception{
+        String sql = "UPDATE `users` SET `rememberPassword` = ? WHERE `users`.`username` = ?";
+        
+        try(
+            Connection conn = DatabaseHelper.ConnectDB();
+            PreparedStatement prepSt = conn.prepareStatement(sql);
+        ){
+            prepSt.setInt(1, isRemember ? 1 : 0);
+            prepSt.setString(2, username);
+
+            prepSt.execute();
+        }
+    }
+    
+    public String GetRememberPassword(String username) throws Exception{
+        String sql = "SELECT * FROM `users` WHERE `username` = ?";
+        try(
+            Connection conn = DatabaseHelper.ConnectDB();
+            PreparedStatement prepSt = conn.prepareStatement(sql);
+        ){
+            prepSt.setString(1, username);
+
+            try(ResultSet rs = prepSt.executeQuery();){
+                if(rs.next()){
+                    int isRemember = rs.getInt(3);
+                    if (isRemember == 1){
+                        String password = rs.getString(2);
+                        return password;
+                    }  
                 }    
             }
         }
