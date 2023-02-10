@@ -81,6 +81,9 @@ public class HomepageForm extends javax.swing.JFrame {
         Change_NK_Btn = new javax.swing.JButton();
         Delete_NK_Btn = new javax.swing.JButton();
         ShowTabPane = new javax.swing.JTabbedPane();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        display_all_nk_table = new javax.swing.JTable();
         jTabbedPane6 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         insert_CCCD_HK_text = new javax.swing.JTextField();
@@ -103,6 +106,8 @@ public class HomepageForm extends javax.swing.JFrame {
         Change_HK_Btn = new javax.swing.JButton();
         Delete_HK_Btn = new javax.swing.JButton();
         ShowTabPane1 = new javax.swing.JTabbedPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        display_all_nk_table1 = new javax.swing.JTable();
         jTabbedPane7 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
         insert_IDHK_PC_text = new javax.swing.JTextField();
@@ -135,6 +140,8 @@ public class HomepageForm extends javax.swing.JFrame {
         level_F0 = new javax.swing.JRadioButton();
         Cachly_TN = new javax.swing.JRadioButton();
         Cachly_KVCL = new javax.swing.JRadioButton();
+        jLabel17 = new javax.swing.JLabel();
+        insert_vacxin_PC_text = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         Search_IDNK_PC = new javax.swing.JTextField();
@@ -142,6 +149,8 @@ public class HomepageForm extends javax.swing.JFrame {
         Change_PC_Btn = new javax.swing.JButton();
         Delete_PC_Btn = new javax.swing.JButton();
         ShowTabPane2 = new javax.swing.JTabbedPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        display_all_nk_table2 = new javax.swing.JTable();
         jTabbedPane8 = new javax.swing.JTabbedPane();
 
         jLabel2.setText("jLabel2");
@@ -430,6 +439,49 @@ public class HomepageForm extends javax.swing.JFrame {
 
         jTabbedPane5.addTab("Hiển thị", jPanel1);
 
+        display_all_nk_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID nhân khẩu", "ID hộ khẩu", "Họ tên", "CCCD", "Ngày sinh", "Giới tính", "Quan hệ với chủ hộ", "Nghề nghiệp"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(display_all_nk_table);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 723, Short.MAX_VALUE)
+        );
+
+        jTabbedPane5.addTab("Tổng hợp", jPanel4);
+
         HK_Tab.addTab("Nhân khẩu", jTabbedPane5);
 
         jTabbedPane6.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -632,6 +684,35 @@ public class HomepageForm extends javax.swing.JFrame {
 
         jTabbedPane6.addTab("Hiển thị", jPanel9);
 
+        display_all_nk_table1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID hộ khẩu", "Họ tên chủ hộ", "CCCD", "Ngày sinh"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(display_all_nk_table1);
+
+        jTabbedPane6.addTab("Tổng hợp", jScrollPane2);
+
         HK_Tab.addTab("Hộ khẩu", jTabbedPane6);
 
         jTabbedPane7.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -729,6 +810,14 @@ public class HomepageForm extends javax.swing.JFrame {
 
         Cachly_KVCL.setText("Tại khu vực cách ly ");
 
+        jLabel17.setText("Số lần tiêm vắc-xin Covid");
+
+        insert_vacxin_PC_text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insert_vacxin_PC_textActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -763,21 +852,23 @@ public class HomepageForm extends javax.swing.JFrame {
                                 .addComponent(Cachly_KVCL, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(insert_CCCD_PC_text)
-                                .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(insert_IDHK_PC_text, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                                .addComponent(insert_timeTest_PC_text)
-                                .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(level_F2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(level_F1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(level_F0, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(level_F0, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(insert_CCCD_PC_text, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(insert_IDHK_PC_text)
+                                .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                .addComponent(insert_timeTest_PC_text, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(insert_vacxin_PC_text, javax.swing.GroupLayout.Alignment.LEADING))))
                     .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
@@ -789,29 +880,30 @@ public class HomepageForm extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel35)
-                            .addComponent(jLabel33))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(insert_IDNK_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(insert_IDHK_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel38)
-                            .addComponent(jLabel36))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(insert_CCCD_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9))
-                    .addComponent(insert_name_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel33))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel31)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(insert_IDNK_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insert_IDHK_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel36))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(insert_CCCD_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insert_name_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel17))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(done_test)
-                    .addComponent(notdone_test))
+                    .addComponent(notdone_test)
+                    .addComponent(insert_vacxin_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel28)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -849,7 +941,7 @@ public class HomepageForm extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cachly_TN)
                     .addComponent(Cachly_KVCL))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(insert_submit_PC_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(104, 104, 104))
         );
@@ -925,6 +1017,35 @@ public class HomepageForm extends javax.swing.JFrame {
 
         jTabbedPane7.addTab("Hiển thị", jPanel8);
 
+        display_all_nk_table2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID nhân khẩu", "ID hộ khẩu", "Họ tên", "CCCD", "Ngày sinh", "Kết quả test Covid", "Thời gian test", "Hình thức test"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(display_all_nk_table2);
+
+        jTabbedPane7.addTab("Tổng hợp", jScrollPane3);
+
         HK_Tab.addTab("Phòng Covid", jTabbedPane7);
         HK_Tab.addTab("Thông báo", jTabbedPane8);
 
@@ -946,22 +1067,6 @@ public class HomepageForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void insert_Ethnic_NK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_Ethnic_NK_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_insert_Ethnic_NK_textActionPerformed
-
-    private void insert_Job_NK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_Job_NK_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_insert_Job_NK_textActionPerformed
-
-    private void insert_Relation_NK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_Relation_NK_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_insert_Relation_NK_textActionPerformed
-
-    private void insert_noiDKTT_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_noiDKTT_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_insert_noiDKTT_textActionPerformed
 
     private void insert_timeTest_PC_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_timeTest_PC_textActionPerformed
         if (insert_timeTest_PC_text.getText().equals("YY-MM-DD")){
@@ -985,150 +1090,9 @@ public class HomepageForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_negativeActionPerformed
 
-    private void insert_submit_NK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_submit_NK_BtnActionPerformed
-        StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(insert_CCCD_NK_text, sb, "Vui lòng nhập số CCCD!");
-        DataValidator.validateEmpty(insert_DoB_NK_text, sb, "Vui lòng nhập ngày sinh!");
-        DataValidator.validateEmpty(insert_Ethnic_NK_text, sb, "Vui lòng nhập dân tộc!");
-        DataValidator.validateEmpty(insert_Hometown_NK_text, sb, "Vui lòng nhập quê quán!");
-        DataValidator.validateEmpty(insert_Job_NK_text, sb, "Vui lòng nhập nghề nghiệp!");
-        DataValidator.validateEmpty(insert_Name_NK_text, sb, "Vui lòng nhập họ và tên nhân khẩu!");
-        DataValidator.validateEmpty(insert_Relation_NK_text, sb, "Vui lòng cho biết quan hệ với chủ hộ!");
-        DataValidator.validateEmpty(insert_ngayDKTT_text, sb, "Vui lòng nhập ngày đăng ký thường trú!");
-        DataValidator.validateEmpty(insert_noiDKTT_text, sb, "Vui lòng nhập nơi đăng ký thường trú!");
-
-        if (!isMale.isSelected() && !isFemale.isSelected()){
-            sb.append("Vui lòng chọn giới tính!\n");
-        }
-
-        if (sb.length() > 0){
-            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
-            return;
-        
-        }
-        NhanKhauDao dao = new NhanKhauDao();
-        try{
-            
-            if (dao.IsExist(insert_CCCD_NK_text.getText(), insert_ID_NK_text.getText())){
-                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu đã tồn tại", "Lỗi");
-            }else{
-                MessageDialogHelper.showMessageDialog(this, "Thêm nhân khẩu thành công!", "Thành công");
-                String gentle = isMale.isSelected() ? "Nam" : "Nữ";
-                NhanKhau nk = new NhanKhau(insert_ID_NK_text.getText(), insert_ID_HK_text.getText(), insert_CCCD_NK_text.getText(), 
-                                            insert_Name_NK_text.getText(), insert_DoB_NK_text.getText(), gentle, insert_Relation_NK_text.getText(), 
-                                            insert_Hometown_NK_text.getText(), insert_Ethnic_NK_text.getText(), insert_Job_NK_text.getText(),
-                                            insert_ngayDKTT_text.getText(), insert_noiDKTT_text.getText(), insert_note_text.getText());
-                
-                dao.InsertNK(nk);
-                dao.InsertNK_HK(insert_ID_HK_text.getText(), insert_ID_NK_text.getText(), nk.getQuanHeVoiChuHo());
-            }
-        }catch (Exception e){
-            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
-        } 
-    }//GEN-LAST:event_insert_submit_NK_BtnActionPerformed
-
-    private void Delete_NK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_NK_BtnActionPerformed
-        StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(search_ID_NK, sb, "Vui lòng nhập ID nhân khẩu cần xóa!");
-        
-        if (sb.length() > 0){
-            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
-            return;
-        }
-        
-        NhanKhauDao dao = new NhanKhauDao();
-        try{
-            NhanKhau nk = dao.SearchNK(search_ID_NK.getText());
-            if (nk == null){
-                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
-            }else{
-                int ans = MessageDialogHelper.showConfirmDialog(this, "Bạn có muốn xóa nhân khẩu này?", "Xác nhận");
-                if (ans == 0){
-                    dao.DeleteNK(nk.getIdNK());
-                    MessageDialogHelper.showMessageDialog(this, "Xóa nhân khẩu thành công!", "Thành công");
-                }
-            }
-        }catch (Exception e){
-
-            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
-        }      
-        
-        
-    }//GEN-LAST:event_Delete_NK_BtnActionPerformed
-
-    private void Show_NK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_NK_BtnActionPerformed
-        StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(search_ID_NK, sb, "Vui lòng nhập ID nhân khẩu cần hiển thị!");
-        
-        if (sb.length() > 0){
-            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
-            return;
-        }
-        
-        NhanKhauDao dao = new NhanKhauDao();
-        try{
-            NhanKhau nk = dao.SearchNK(search_ID_NK.getText());
-            if (nk == null){
-                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
-            }else{
-                NK_Info infoTab = new NK_Info(nk);
-                infoTab.SetEditableTextField(false);
-                ShowTabPane.removeAll();
-                ShowTabPane.addTab("Hiển thị", infoTab);
-            }
-        }catch (Exception e){
-            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
-        }      
-    }//GEN-LAST:event_Show_NK_BtnActionPerformed
-
-    private void Change_NK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_NK_BtnActionPerformed
-        StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(search_ID_NK, sb, "Vui lòng nhập ID nhân khẩu cần sửa!");
-        
-        if (sb.length() > 0){
-            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
-            return;
-        }
-        
-        NhanKhauDao dao = new NhanKhauDao();
-        try{
-            NhanKhau nk = dao.SearchNK(search_ID_NK.getText());
-            if (nk == null){
-                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
-            }else{
-                NK_Info infoTab = new NK_Info(nk);
-                infoTab.SetEditableTextField(true);
-                ShowTabPane.removeAll();
-                ShowTabPane.addTab("Chỉnh sửa", infoTab);
-            }
-        }catch (Exception e){
-            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
-        }      
-    }//GEN-LAST:event_Change_NK_BtnActionPerformed
-
-    private void insert_ngayDKTT_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_ngayDKTT_textActionPerformed
-
-    }//GEN-LAST:event_insert_ngayDKTT_textActionPerformed
-
-    private void insert_DoB_NK_textFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_insert_DoB_NK_textFocusGained
-        if (insert_DoB_NK_text.getText().equals("YY-MM-DD")){
-            insert_DoB_NK_text.setText("");
-        }
-    }//GEN-LAST:event_insert_DoB_NK_textFocusGained
-
-    private void insert_ngayDKTT_textFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_insert_ngayDKTT_textFocusGained
-        if (insert_ngayDKTT_text.getText().equals("YY-MM-DD")){
-            insert_ngayDKTT_text.setText("");
-        }
-    }//GEN-LAST:event_insert_ngayDKTT_textFocusGained
-
     private void insert_Hometown_HK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_Hometown_HK_textActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_insert_Hometown_HK_textActionPerformed
-
-    private void insert_ID_HK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_ID_HK_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_insert_ID_HK_textActionPerformed
 
     private void insert_submit_HK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_submit_HK_BtnActionPerformed
         StringBuilder sb = new StringBuilder();
@@ -1406,6 +1370,166 @@ public class HomepageForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_insert_startTimeCL_PC_textActionPerformed
 
+    private void Delete_NK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_NK_BtnActionPerformed
+        StringBuilder sb = new StringBuilder();
+        DataValidator.validateEmpty(search_ID_NK, sb, "Vui lòng nhập ID nhân khẩu cần xóa!");
+
+        if (sb.length() > 0){
+            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
+            return;
+        }
+
+        NhanKhauDao dao = new NhanKhauDao();
+        try{
+            NhanKhau nk = dao.SearchNK(search_ID_NK.getText());
+            if (nk == null){
+                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
+            }else{
+                int ans = MessageDialogHelper.showConfirmDialog(this, "Bạn có muốn xóa nhân khẩu này?", "Xác nhận");
+                if (ans == 0){
+                    dao.DeleteNK(nk.getIdNK());
+                    MessageDialogHelper.showMessageDialog(this, "Xóa nhân khẩu thành công!", "Thành công");
+                }
+            }
+        }catch (Exception e){
+
+            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
+        }
+
+    }//GEN-LAST:event_Delete_NK_BtnActionPerformed
+
+    private void Change_NK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_NK_BtnActionPerformed
+        StringBuilder sb = new StringBuilder();
+        DataValidator.validateEmpty(search_ID_NK, sb, "Vui lòng nhập ID nhân khẩu cần sửa!");
+
+        if (sb.length() > 0){
+            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
+            return;
+        }
+
+        NhanKhauDao dao = new NhanKhauDao();
+        try{
+            NhanKhau nk = dao.SearchNK(search_ID_NK.getText());
+            if (nk == null){
+                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
+            }else{
+                NK_Info infoTab = new NK_Info(nk);
+                infoTab.SetEditableTextField(true);
+                ShowTabPane.removeAll();
+                ShowTabPane.addTab("Chỉnh sửa", infoTab);
+            }
+        }catch (Exception e){
+            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
+        }
+    }//GEN-LAST:event_Change_NK_BtnActionPerformed
+
+    private void Show_NK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_NK_BtnActionPerformed
+        StringBuilder sb = new StringBuilder();
+        DataValidator.validateEmpty(search_ID_NK, sb, "Vui lòng nhập ID nhân khẩu cần hiển thị!");
+
+        if (sb.length() > 0){
+            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
+            return;
+        }
+
+        NhanKhauDao dao = new NhanKhauDao();
+        try{
+            NhanKhau nk = dao.SearchNK(search_ID_NK.getText());
+            if (nk == null){
+                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
+            }else{
+                NK_Info infoTab = new NK_Info(nk);
+                infoTab.SetEditableTextField(false);
+                ShowTabPane.removeAll();
+                ShowTabPane.addTab("Hiển thị", infoTab);
+            }
+        }catch (Exception e){
+            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
+        }
+    }//GEN-LAST:event_Show_NK_BtnActionPerformed
+
+    private void insert_ngayDKTT_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_ngayDKTT_textActionPerformed
+
+    }//GEN-LAST:event_insert_ngayDKTT_textActionPerformed
+
+    private void insert_ngayDKTT_textFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_insert_ngayDKTT_textFocusGained
+        if (insert_ngayDKTT_text.getText().equals("YY-MM-DD")){
+            insert_ngayDKTT_text.setText("");
+        }
+    }//GEN-LAST:event_insert_ngayDKTT_textFocusGained
+
+    private void insert_noiDKTT_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_noiDKTT_textActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_insert_noiDKTT_textActionPerformed
+
+    private void insert_Relation_NK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_Relation_NK_textActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_insert_Relation_NK_textActionPerformed
+
+    private void insert_Job_NK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_Job_NK_textActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_insert_Job_NK_textActionPerformed
+
+    private void insert_ID_HK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_ID_HK_textActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_insert_ID_HK_textActionPerformed
+
+    private void insert_submit_NK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_submit_NK_BtnActionPerformed
+        StringBuilder sb = new StringBuilder();
+        DataValidator.validateEmpty(insert_CCCD_NK_text, sb, "Vui lòng nhập số CCCD!");
+        DataValidator.validateEmpty(insert_DoB_NK_text, sb, "Vui lòng nhập ngày sinh!");
+        DataValidator.validateEmpty(insert_Ethnic_NK_text, sb, "Vui lòng nhập dân tộc!");
+        DataValidator.validateEmpty(insert_Hometown_NK_text, sb, "Vui lòng nhập quê quán!");
+        DataValidator.validateEmpty(insert_Job_NK_text, sb, "Vui lòng nhập nghề nghiệp!");
+        DataValidator.validateEmpty(insert_Name_NK_text, sb, "Vui lòng nhập họ và tên nhân khẩu!");
+        DataValidator.validateEmpty(insert_Relation_NK_text, sb, "Vui lòng cho biết quan hệ với chủ hộ!");
+        DataValidator.validateEmpty(insert_ngayDKTT_text, sb, "Vui lòng nhập ngày đăng ký thường trú!");
+        DataValidator.validateEmpty(insert_noiDKTT_text, sb, "Vui lòng nhập nơi đăng ký thường trú!");
+
+        if (!isMale.isSelected() && !isFemale.isSelected()){
+            sb.append("Vui lòng chọn giới tính!\n");
+        }
+
+        if (sb.length() > 0){
+            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
+            return;
+
+        }
+        NhanKhauDao dao = new NhanKhauDao();
+        try{
+
+            if (dao.IsExist(insert_CCCD_NK_text.getText(), insert_ID_NK_text.getText())){
+                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu đã tồn tại", "Lỗi");
+            }else{
+                MessageDialogHelper.showMessageDialog(this, "Thêm nhân khẩu thành công!", "Thành công");
+                String gentle = isMale.isSelected() ? "Nam" : "Nữ";
+                NhanKhau nk = new NhanKhau(insert_ID_NK_text.getText(), insert_ID_HK_text.getText(), insert_CCCD_NK_text.getText(),
+                    insert_Name_NK_text.getText(), insert_DoB_NK_text.getText(), gentle, insert_Relation_NK_text.getText(),
+                    insert_Hometown_NK_text.getText(), insert_Ethnic_NK_text.getText(), insert_Job_NK_text.getText(),
+                    insert_ngayDKTT_text.getText(), insert_noiDKTT_text.getText(), insert_note_text.getText());
+
+                dao.InsertNK(nk);
+                dao.InsertNK_HK(insert_ID_HK_text.getText(), insert_ID_NK_text.getText(), nk.getQuanHeVoiChuHo());
+            }
+        }catch (Exception e){
+            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
+        }
+    }//GEN-LAST:event_insert_submit_NK_BtnActionPerformed
+
+    private void insert_Ethnic_NK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_Ethnic_NK_textActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_insert_Ethnic_NK_textActionPerformed
+
+    private void insert_DoB_NK_textFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_insert_DoB_NK_textFocusGained
+        if (insert_DoB_NK_text.getText().equals("YY-MM-DD")){
+            insert_DoB_NK_text.setText("");
+        }
+    }//GEN-LAST:event_insert_DoB_NK_textFocusGained
+
+    private void insert_vacxin_PC_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_vacxin_PC_textActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_insert_vacxin_PC_textActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1427,6 +1551,9 @@ public class HomepageForm extends javax.swing.JFrame {
     private javax.swing.JButton Show_NK_Btn;
     private javax.swing.JButton Show_PC_Btn;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTable display_all_nk_table;
+    private javax.swing.JTable display_all_nk_table1;
+    private javax.swing.JTable display_all_nk_table2;
     private javax.swing.JRadioButton done_test;
     private javax.swing.JTextField insert_CCCD_HK_text;
     private javax.swing.JTextField insert_CCCD_NK_text;
@@ -1456,6 +1583,7 @@ public class HomepageForm extends javax.swing.JFrame {
     private javax.swing.JButton insert_submit_NK_Btn;
     private javax.swing.JButton insert_submit_PC_Btn;
     private javax.swing.JTextField insert_timeTest_PC_text;
+    private javax.swing.JTextField insert_vacxin_PC_text;
     private javax.swing.JRadioButton isFemale;
     private javax.swing.JRadioButton isMale;
     private javax.swing.JLabel jLabel1;
@@ -1466,6 +1594,7 @@ public class HomepageForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -1498,9 +1627,13 @@ public class HomepageForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTabbedPane jTabbedPane6;
     private javax.swing.JTabbedPane jTabbedPane7;
