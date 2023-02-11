@@ -493,8 +493,6 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="insert_DoB_HK_text" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
                               <Component id="insert_HTCH_HK_text" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel24" alignment="0" max="32767" attributes="0"/>
                               <Component id="insert_ID_HK_text1" alignment="0" pref="250" max="32767" attributes="0"/>
@@ -503,13 +501,11 @@
                           <EmptySpace pref="199" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel27" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="insert_Hometown_HK_text" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel19" alignment="1" pref="250" max="32767" attributes="0"/>
                                   <Component id="insert_CCCD_HK_text" alignment="1" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jLabel30" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
-                              <Component id="insert_Note_HK_text" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
+                              <Component id="jLabel30" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                              <Component id="insert_Note_HK_text" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -525,6 +521,10 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
+                                  <Component id="insert_HTCH_HK_text" linkSize="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -537,25 +537,13 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="insert_Hometown_HK_text" linkSize="3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="insert_Note_HK_text" linkSize="3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="insert_HTCH_HK_text" linkSize="3" alignment="1" min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="insert_DoB_HK_text" linkSize="3" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="insert_Note_HK_text" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                           <Component id="insert_submit_HK_Btn" min="-2" pref="36" max="-2" attributes="0"/>
                           <EmptySpace pref="357" max="32767" attributes="0"/>
                       </Group>
@@ -567,16 +555,6 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insert_CCCD_HK_textActionPerformed"/>
                   </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="insert_DoB_HK_text">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insert_DoB_HK_textActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel18">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel19">
                   <Properties>
@@ -609,16 +587,6 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insert_submit_HK_BtnActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel27">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Qu&#xea; qu&#xe1;n"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="insert_Hometown_HK_text">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insert_Hometown_HK_textActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel30">

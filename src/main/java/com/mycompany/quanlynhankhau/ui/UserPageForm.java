@@ -82,16 +82,12 @@ public class UserPageForm extends javax.swing.JFrame {
         jTabbedPane6 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         insert_CCCD_HK_text = new javax.swing.JTextField();
-        insert_DoB_HK_text = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         insert_ID_HK_text1 = new javax.swing.JTextField();
         insert_HTCH_HK_text = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         insert_submit_HK_Btn = new javax.swing.JButton();
-        jLabel27 = new javax.swing.JLabel();
-        insert_Hometown_HK_text = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         insert_Note_HK_text = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
@@ -415,14 +411,6 @@ public class UserPageForm extends javax.swing.JFrame {
             }
         });
 
-        insert_DoB_HK_text.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                insert_DoB_HK_textActionPerformed(evt);
-            }
-        });
-
-        jLabel18.setText("Ngày sinh");
-
         jLabel19.setText("CCCD chủ hộ");
 
         jLabel21.setText("ID hộ khẩu");
@@ -448,14 +436,6 @@ public class UserPageForm extends javax.swing.JFrame {
             }
         });
 
-        jLabel27.setText("Quê quán");
-
-        insert_Hometown_HK_text.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                insert_Hometown_HK_textActionPerformed(evt);
-            }
-        });
-
         jLabel30.setText("Ghi chú");
 
         insert_Note_HK_text.addActionListener(new java.awt.event.ActionListener() {
@@ -471,8 +451,6 @@ public class UserPageForm extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(insert_DoB_HK_text)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(insert_HTCH_HK_text)
                     .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(insert_ID_HK_text1, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
@@ -480,12 +458,10 @@ public class UserPageForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(insert_Hometown_HK_text)
                         .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                         .addComponent(insert_CCCD_HK_text, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(insert_Note_HK_text, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insert_Note_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(insert_submit_HK_Btn)
@@ -497,6 +473,9 @@ public class UserPageForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(insert_HTCH_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(141, 141, 141))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel21)
                             .addComponent(jLabel19))
@@ -507,25 +486,15 @@ public class UserPageForm extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel24)
-                            .addComponent(jLabel27))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(insert_Hometown_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9))
-                    .addComponent(insert_HTCH_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel30))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(insert_DoB_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(insert_Note_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(67, 67, 67)
+                            .addComponent(jLabel30))
+                        .addGap(18, 18, 18)
+                        .addComponent(insert_Note_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(138, 138, 138)))
                 .addComponent(insert_submit_HK_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(357, Short.MAX_VALUE))
         );
 
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {insert_CCCD_HK_text, insert_DoB_HK_text, insert_HTCH_HK_text, insert_Hometown_HK_text, insert_ID_HK_text1, insert_Note_HK_text});
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {insert_CCCD_HK_text, insert_HTCH_HK_text, insert_ID_HK_text1, insert_Note_HK_text});
 
         jTabbedPane6.addTab("Thêm", jPanel3);
 
@@ -906,10 +875,6 @@ public class UserPageForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_negativeActionPerformed
 
-    private void insert_Hometown_HK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_Hometown_HK_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_insert_Hometown_HK_textActionPerformed
-
     private void insert_submit_HK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_submit_HK_BtnActionPerformed
         StringBuilder sb = new StringBuilder();
         DataValidator.validateEmpty(insert_CCCD_HK_text, sb, "Vui lòng nhập số CCCD!");
@@ -981,10 +946,6 @@ public class UserPageForm extends javax.swing.JFrame {
     private void insert_HTCH_HK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_HTCH_HK_textActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_insert_HTCH_HK_textActionPerformed
-
-    private void insert_DoB_HK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_DoB_HK_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_insert_DoB_HK_textActionPerformed
 
     private void insert_Note_HK_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_Note_HK_textActionPerformed
         // TODO add your handling code here:
@@ -1186,11 +1147,9 @@ public class UserPageForm extends javax.swing.JFrame {
     private javax.swing.JTextField insert_CCCD_HK_text;
     private javax.swing.JTextField insert_CCCD_NK_text;
     private javax.swing.JTextField insert_CCCD_PC_text;
-    private javax.swing.JTextField insert_DoB_HK_text;
     private javax.swing.JTextField insert_DoB_NK_text;
     private javax.swing.JTextField insert_Ethnic_NK_text;
     private javax.swing.JTextField insert_HTCH_HK_text;
-    private javax.swing.JTextField insert_Hometown_HK_text;
     private javax.swing.JTextField insert_Hometown_NK_text;
     private javax.swing.JTextField insert_IDHK_PC_text;
     private javax.swing.JTextField insert_IDNK_PC_text;
@@ -1222,7 +1181,6 @@ public class UserPageForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
@@ -1230,7 +1188,6 @@ public class UserPageForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;

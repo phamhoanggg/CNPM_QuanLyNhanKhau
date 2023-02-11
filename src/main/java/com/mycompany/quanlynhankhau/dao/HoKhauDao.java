@@ -6,7 +6,6 @@ package com.mycompany.quanlynhankhau.dao;
 
 import com.mycompany.quanlynhankhau.Helpers.DatabaseHelper;
 import com.mycompany.quanlynhankhau.Thongtin.HoKhau;
-import com.mycompany.quanlynhankhau.Thongtin.NhanKhau;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
