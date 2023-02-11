@@ -6,9 +6,9 @@ package com.mycompany.quanlynhankhau.ui;
 
 import com.mycompany.quanlynhankhau.Helpers.DataValidator;
 import com.mycompany.quanlynhankhau.Helpers.MessageDialogHelper;
+import com.mycompany.quanlynhankhau.Helpers.ShareData;
 import com.mycompany.quanlynhankhau.Thongtin.NguoiQuanLy;
 import com.mycompany.quanlynhankhau.dao.NguoiQuanLyDao;
-import static com.sun.corba.se.impl.util.Utility.printStackTrace;
 
 /**
  *
@@ -21,6 +21,8 @@ public class LoginForm extends javax.swing.JFrame {
      */
     public LoginForm() {
         initComponents();
+        setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -133,6 +135,7 @@ public class LoginForm extends javax.swing.JFrame {
         if (sb.length() > 0){
             MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
             return;
+        
         }
         
         NguoiQuanLyDao dao = new NguoiQuanLyDao();
@@ -141,6 +144,10 @@ public class LoginForm extends javax.swing.JFrame {
             if (admin == null){
                 MessageDialogHelper.showErrorDialog(this, "Sai tên đăng nhập hoặc mật khẩu!", "Lỗi");
             }else{
+                MessageDialogHelper.showMessageDialog(this, "Đăng nhập thành công!", "Thành công!");
+                HomepageForm homePage = new HomepageForm();
+                homePage.setVisible(true);
+                ShareData.NguoiDangNhap = admin;
                 this.dispose();
             }
         }catch (Exception e){
@@ -178,6 +185,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+ 
             public void run() {
                 new LoginForm().setVisible(true);
             }
@@ -194,4 +202,8 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JCheckBox rememberpwcheck;
     private javax.swing.JTextField usernameText;
     // End of variables declaration//GEN-END:variables
+
+    private void printStackTrace() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

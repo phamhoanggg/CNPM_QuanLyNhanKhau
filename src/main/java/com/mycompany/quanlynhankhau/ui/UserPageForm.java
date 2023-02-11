@@ -20,12 +20,12 @@ import com.mycompany.quanlynhankhau.dao.NhanKhauDao;
  *
  * @author HP
  */
-public class HomepageForm extends javax.swing.JFrame {
+public class UserPageForm extends javax.swing.JFrame {
 
     /**
      * Creates new form HomepageForm
      */
-    public HomepageForm() {
+    public UserPageForm() {
         initComponents();
         
         setLocationRelativeTo(null);
@@ -45,16 +45,6 @@ public class HomepageForm extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         HK_Tab = new javax.swing.JTabbedPane();
         jTabbedPane5 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        search_ID_NK = new javax.swing.JTextField();
-        Show_NK_Btn = new javax.swing.JButton();
-        Change_NK_Btn = new javax.swing.JButton();
-        Delete_NK_Btn = new javax.swing.JButton();
-        ShowTabPane = new javax.swing.JTabbedPane();
-        jPanel4 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        display_all_nk_table = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         insert_CCCD_NK_text = new javax.swing.JTextField();
         insert_DoB_NK_text = new javax.swing.JTextField();
@@ -84,6 +74,11 @@ public class HomepageForm extends javax.swing.JFrame {
         insert_note_text = new javax.swing.JTextField();
         isMale = new javax.swing.JRadioButton();
         isFemale = new javax.swing.JRadioButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        search_ID_NK2 = new javax.swing.JTextField();
+        Show_NK_Btn2 = new javax.swing.JButton();
+        ShowTabPane4 = new javax.swing.JTabbedPane();
         jTabbedPane6 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         insert_CCCD_HK_text = new javax.swing.JTextField();
@@ -103,11 +98,7 @@ public class HomepageForm extends javax.swing.JFrame {
         jLabel47 = new javax.swing.JLabel();
         Search_ID_HK = new javax.swing.JTextField();
         Show_HK_Btn = new javax.swing.JButton();
-        Change_HK_Btn = new javax.swing.JButton();
-        Delete_HK_Btn = new javax.swing.JButton();
         ShowTabPane1 = new javax.swing.JTabbedPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        display_all_nk_table1 = new javax.swing.JTable();
         jTabbedPane7 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
         insert_IDHK_PC_text = new javax.swing.JTextField();
@@ -146,11 +137,7 @@ public class HomepageForm extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         Search_IDNK_PC = new javax.swing.JTextField();
         Show_PC_Btn = new javax.swing.JButton();
-        Change_PC_Btn = new javax.swing.JButton();
-        Delete_PC_Btn = new javax.swing.JButton();
         ShowTabPane2 = new javax.swing.JTabbedPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        display_all_nk_table2 = new javax.swing.JTable();
         jTabbedPane8 = new javax.swing.JTabbedPane();
 
         jLabel2.setText("jLabel2");
@@ -165,116 +152,6 @@ public class HomepageForm extends javax.swing.JFrame {
         HK_Tab.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
 
         jTabbedPane5.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("Nhập ID nhân khẩu:");
-        jLabel16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        Show_NK_Btn.setText("Hiển thị");
-        Show_NK_Btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Show_NK_BtnActionPerformed(evt);
-            }
-        });
-
-        Change_NK_Btn.setText("Sửa");
-        Change_NK_Btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Change_NK_BtnActionPerformed(evt);
-            }
-        });
-
-        Delete_NK_Btn.setText("Xóa");
-        Delete_NK_Btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Delete_NK_BtnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 169, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(Show_NK_Btn)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(Delete_NK_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(Change_NK_Btn))
-                                .addComponent(search_ID_NK, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 276, Short.MAX_VALUE))
-                    .addComponent(ShowTabPane))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(search_ID_NK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Show_NK_Btn)
-                    .addComponent(Change_NK_Btn)
-                    .addComponent(Delete_NK_Btn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ShowTabPane, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane5.addTab("Hiển thị", jPanel1);
-
-        display_all_nk_table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID nhân khẩu", "ID hộ khẩu", "Họ tên", "CCCD", "Ngày sinh", "Giới tính", "Quan hệ với chủ hộ", "Nghề nghiệp"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(display_all_nk_table);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE)
-        );
-
-        jTabbedPane5.addTab("Tổng hợp", jPanel4);
 
         jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
 
@@ -482,6 +359,50 @@ public class HomepageForm extends javax.swing.JFrame {
 
         jTabbedPane5.addTab("Thêm", jPanel2);
 
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("Nhập ID nhân khẩu:");
+        jLabel25.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Show_NK_Btn2.setText("Hiển thị");
+        Show_NK_Btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Show_NK_Btn2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ShowTabPane4)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 169, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(search_ID_NK2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(Show_NK_Btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 276, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(search_ID_NK2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(Show_NK_Btn2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ShowTabPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane5.addTab("Hiển thị", jPanel4);
+
         HK_Tab.addTab("Nhân khẩu", jTabbedPane5);
 
         jTabbedPane6.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -624,22 +545,6 @@ public class HomepageForm extends javax.swing.JFrame {
             }
         });
 
-        Change_HK_Btn.setText("Sửa");
-        Change_HK_Btn.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        Change_HK_Btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Change_HK_BtnActionPerformed(evt);
-            }
-        });
-
-        Delete_HK_Btn.setText("Xóa");
-        Delete_HK_Btn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Delete_HK_Btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Delete_HK_BtnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -652,13 +557,8 @@ public class HomepageForm extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(211, 211, 211)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(Show_HK_Btn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Delete_HK_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Change_HK_Btn))
-                            .addComponent(Search_ID_HK, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Search_ID_HK, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(Show_HK_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 240, Short.MAX_VALUE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addContainerGap()
@@ -673,45 +573,13 @@ public class HomepageForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Search_ID_HK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Show_HK_Btn)
-                    .addComponent(Change_HK_Btn)
-                    .addComponent(Delete_HK_Btn))
+                .addComponent(Show_HK_Btn)
                 .addGap(18, 18, 18)
                 .addComponent(ShowTabPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jTabbedPane6.addTab("Hiển thị", jPanel9);
-
-        display_all_nk_table1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ID hộ khẩu", "Họ tên chủ hộ", "CCCD", "Ngày sinh"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(display_all_nk_table1);
-
-        jTabbedPane6.addTab("Tổng hợp", jScrollPane2);
 
         HK_Tab.addTab("Hộ khẩu", jTabbedPane6);
 
@@ -809,11 +677,6 @@ public class HomepageForm extends javax.swing.JFrame {
         Cachly_TN.setText("Tại nhà");
 
         Cachly_KVCL.setText("Tập trung");
-        Cachly_KVCL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cachly_KVCLActionPerformed(evt);
-            }
-        });
 
         jLabel17.setText("Số lần tiêm vắc-xin Covid");
 
@@ -964,20 +827,6 @@ public class HomepageForm extends javax.swing.JFrame {
             }
         });
 
-        Change_PC_Btn.setText("Sửa");
-        Change_PC_Btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Change_PC_BtnActionPerformed(evt);
-            }
-        });
-
-        Delete_PC_Btn.setText("Xóa");
-        Delete_PC_Btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Delete_PC_BtnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -990,13 +839,8 @@ public class HomepageForm extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(211, 211, 211)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addComponent(Show_PC_Btn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Delete_PC_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Change_PC_Btn))
-                            .addComponent(Search_IDNK_PC, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Search_IDNK_PC, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(Show_PC_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 240, Short.MAX_VALUE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addContainerGap()
@@ -1011,45 +855,13 @@ public class HomepageForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Search_IDNK_PC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Show_PC_Btn)
-                    .addComponent(Change_PC_Btn)
-                    .addComponent(Delete_PC_Btn))
+                .addComponent(Show_PC_Btn)
                 .addGap(18, 18, 18)
                 .addComponent(ShowTabPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jTabbedPane7.addTab("Hiển thị", jPanel8);
-
-        display_all_nk_table2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID nhân khẩu", "ID hộ khẩu", "Họ tên", "CCCD", "Ngày sinh", "Kết quả test Covid", "Thời gian test", "Hình thức test"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(display_all_nk_table2);
-
-        jTabbedPane7.addTab("Tổng hợp", jScrollPane3);
 
         HK_Tab.addTab("Phòng Covid", jTabbedPane7);
         HK_Tab.addTab("Thông báo", jTabbedPane8);
@@ -1153,59 +965,6 @@ public class HomepageForm extends javax.swing.JFrame {
             MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
         }      
     }//GEN-LAST:event_Show_HK_BtnActionPerformed
-
-    private void Delete_HK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_HK_BtnActionPerformed
-        StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(Search_ID_HK, sb, "Vui lòng nhập ID hộ khẩu cần xóa!");
-        
-        if (sb.length() > 0){
-            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
-            return;
-        }
-        
-        HoKhauDao dao = new HoKhauDao();
-        try{
-            HoKhau hk = dao.SearchHK(Search_ID_HK.getText());
-            if (hk == null){
-                MessageDialogHelper.showErrorDialog(this, "Hộ khẩu không tồn tại!", "Lỗi");
-            }else{
-                int ans = MessageDialogHelper.showConfirmDialog(this, "Bạn có muốn xóa hộ khẩu này?", "Xác nhận");
-                if (ans == 0){
-                    dao.DeleteHK(hk.getIdHK());
-                    MessageDialogHelper.showMessageDialog(this, "Xóa hộ khẩu thành công!", "Thành công");
-                }
-            }
-        }catch (Exception e){
-
-            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
-        }      
-        
-    }//GEN-LAST:event_Delete_HK_BtnActionPerformed
-
-    private void Change_HK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_HK_BtnActionPerformed
-        StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(Search_ID_HK, sb, "Vui lòng nhập ID hộ khẩu cần sửa!");
-        
-        if (sb.length() > 0){
-            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
-            return;
-        }
-        
-        HoKhauDao dao = new HoKhauDao();
-        try{
-            HoKhau hk = dao.SearchHK(Search_ID_HK.getText());
-            if (hk == null){
-                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
-            }else{
-                HK_Info infoTab = new HK_Info(hk);
-                infoTab.SetEditableTextField(true);
-                ShowTabPane.removeAll();
-                ShowTabPane.addTab("Chỉnh sửa", infoTab);
-            }
-        }catch (Exception e){
-            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
-        }      
-    }//GEN-LAST:event_Change_HK_BtnActionPerformed
 
     private void Search_ID_HKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Search_ID_HKActionPerformed
         // TODO add your handling code here:
@@ -1316,141 +1075,11 @@ public class HomepageForm extends javax.swing.JFrame {
         }      
     }//GEN-LAST:event_Show_PC_BtnActionPerformed
 
-    private void Delete_PC_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_PC_BtnActionPerformed
-        StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(Search_IDNK_PC, sb, "Vui lòng nhập ID nhân khẩu cần xóa thông tin Covid-19!");
-        
-        if (sb.length() > 0){
-            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
-            return;
-        }
-        
-        CachLyDao dao = new CachLyDao();
-        try{
-            CachLy cl = dao.SearchCL(Search_IDNK_PC.getText());
-            if (cl == null){
-                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
-            }else{
-                int ans = MessageDialogHelper.showConfirmDialog(this, "Bạn có muốn xóa thông tin nhân khẩu này?", "Xác nhận");
-                if (ans == 0){
-                    dao.DeleteCL(cl.getIdNK());
-                    MessageDialogHelper.showMessageDialog(this, "Xóa thông tin thành công!", "Thành công");
-                }
-            }
-        }catch (Exception e){
-
-            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
-        }      
-    }//GEN-LAST:event_Delete_PC_BtnActionPerformed
-
-    private void Change_PC_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_PC_BtnActionPerformed
-        StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(Search_IDNK_PC, sb, "Vui lòng nhập ID nhân khẩu có thông tin Covid-19 cần sửa!");
-        
-        if (sb.length() > 0){
-            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
-            return;
-        }
-        
-        CachLyDao dao = new CachLyDao();
-        try{
-            CachLy cl = dao.SearchCL(Search_IDNK_PC.getText());
-            if (cl == null){
-                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
-            }else{
-                CL_Info infoTab = new CL_Info(cl);
-                infoTab.SetEditableTextField(true);
-                ShowTabPane2.removeAll();
-                ShowTabPane2.addTab("Chỉnh sửa", infoTab);
-            }
-        }catch (Exception e){
-            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
-        }      
-    }//GEN-LAST:event_Change_PC_BtnActionPerformed
-
     private void insert_startTimeCL_PC_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_startTimeCL_PC_textActionPerformed
         if (insert_startTimeCL_PC_text.getText().equals("YY-MM-DD")){
             insert_startTimeCL_PC_text.setText("");
         }
     }//GEN-LAST:event_insert_startTimeCL_PC_textActionPerformed
-
-    private void Delete_NK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_NK_BtnActionPerformed
-        StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(search_ID_NK, sb, "Vui lòng nhập ID nhân khẩu cần xóa!");
-
-        if (sb.length() > 0){
-            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
-            return;
-        }
-
-        NhanKhauDao dao = new NhanKhauDao();
-        try{
-            NhanKhau nk = dao.SearchNK(search_ID_NK.getText());
-            if (nk == null){
-                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
-            }else{
-                int ans = MessageDialogHelper.showConfirmDialog(this, "Bạn có muốn xóa nhân khẩu này?", "Xác nhận");
-                if (ans == 0){
-                    dao.DeleteNK(nk.getIdNK());
-                    MessageDialogHelper.showMessageDialog(this, "Xóa nhân khẩu thành công!", "Thành công");
-                }
-            }
-        }catch (Exception e){
-
-            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
-        }
-
-    }//GEN-LAST:event_Delete_NK_BtnActionPerformed
-
-    private void Change_NK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_NK_BtnActionPerformed
-        StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(search_ID_NK, sb, "Vui lòng nhập ID nhân khẩu cần sửa!");
-
-        if (sb.length() > 0){
-            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
-            return;
-        }
-
-        NhanKhauDao dao = new NhanKhauDao();
-        try{
-            NhanKhau nk = dao.SearchNK(search_ID_NK.getText());
-            if (nk == null){
-                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
-            }else{
-                NK_Info infoTab = new NK_Info(nk);
-                infoTab.SetEditableTextField(true);
-                ShowTabPane.removeAll();
-                ShowTabPane.addTab("Chỉnh sửa", infoTab);
-            }
-        }catch (Exception e){
-            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
-        }
-    }//GEN-LAST:event_Change_NK_BtnActionPerformed
-
-    private void Show_NK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_NK_BtnActionPerformed
-        StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(search_ID_NK, sb, "Vui lòng nhập ID nhân khẩu cần hiển thị!");
-
-        if (sb.length() > 0){
-            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
-            return;
-        }
-
-        NhanKhauDao dao = new NhanKhauDao();
-        try{
-            NhanKhau nk = dao.SearchNK(search_ID_NK.getText());
-            if (nk == null){
-                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
-            }else{
-                NK_Info infoTab = new NK_Info(nk);
-                infoTab.SetEditableTextField(false);
-                ShowTabPane.removeAll();
-                ShowTabPane.addTab("Hiển thị", infoTab);
-            }
-        }catch (Exception e){
-            MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
-        }
-    }//GEN-LAST:event_Show_NK_BtnActionPerformed
 
     private void insert_ngayDKTT_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_ngayDKTT_textActionPerformed
 
@@ -1534,34 +1163,25 @@ public class HomepageForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_insert_vacxin_PC_textActionPerformed
 
-    private void Cachly_KVCLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cachly_KVCLActionPerformed
+    private void Show_NK_Btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_NK_Btn2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Cachly_KVCLActionPerformed
+    }//GEN-LAST:event_Show_NK_Btn2ActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton Cachly_KVCL;
     private javax.swing.JRadioButton Cachly_TN;
-    private javax.swing.JButton Change_HK_Btn;
-    private javax.swing.JButton Change_NK_Btn;
-    private javax.swing.JButton Change_PC_Btn;
-    private javax.swing.JButton Delete_HK_Btn;
-    private javax.swing.JButton Delete_NK_Btn;
-    private javax.swing.JButton Delete_PC_Btn;
     private javax.swing.JTabbedPane HK_Tab;
     private javax.swing.JTextField Search_IDNK_PC;
     private javax.swing.JTextField Search_ID_HK;
-    private javax.swing.JTabbedPane ShowTabPane;
     private javax.swing.JTabbedPane ShowTabPane1;
     private javax.swing.JTabbedPane ShowTabPane2;
+    private javax.swing.JTabbedPane ShowTabPane4;
     private javax.swing.JButton Show_HK_Btn;
-    private javax.swing.JButton Show_NK_Btn;
+    private javax.swing.JButton Show_NK_Btn2;
     private javax.swing.JButton Show_PC_Btn;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JTable display_all_nk_table;
-    private javax.swing.JTable display_all_nk_table1;
-    private javax.swing.JTable display_all_nk_table2;
     private javax.swing.JRadioButton done_test;
     private javax.swing.JTextField insert_CCCD_HK_text;
     private javax.swing.JTextField insert_CCCD_NK_text;
@@ -1601,7 +1221,6 @@ public class HomepageForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -1610,6 +1229,7 @@ public class HomepageForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
@@ -1632,16 +1252,12 @@ public class HomepageForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTabbedPane jTabbedPane6;
     private javax.swing.JTabbedPane jTabbedPane7;
@@ -1652,7 +1268,7 @@ public class HomepageForm extends javax.swing.JFrame {
     private javax.swing.JRadioButton negative;
     private javax.swing.JRadioButton notdone_test;
     private javax.swing.JRadioButton positive;
-    private javax.swing.JTextField search_ID_NK;
+    private javax.swing.JTextField search_ID_NK2;
     // End of variables declaration//GEN-END:variables
 
 
