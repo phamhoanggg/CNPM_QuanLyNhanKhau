@@ -9,18 +9,16 @@ package com.mycompany.quanlynhankhau.Thongtin;
  * @author HP
  */
 public class HoKhau {
-    private String idHK, cccd, hoTen, ngaySinh, queQuan, ghiChu;
+    private String idHK, cccd, hoTen, ghiChu;
 
 // Constructors
     public HoKhau() {
     }
 
-    public HoKhau(String idHK, String cccd, String hoTen, String ngaySinh, String queQuan, String ghiChu) {
+    public HoKhau(String idHK, String hoTen, String cccd, String ghiChu) {
         this.idHK = idHK;        
         this.cccd = cccd;
         this.hoTen = hoTen;
-        this.ngaySinh = ngaySinh;
-        this.queQuan = queQuan;
         this.ghiChu = ghiChu;
     }
 
@@ -48,22 +46,6 @@ public class HoKhau {
 
     public void setHoTen(String hoTen) {
         this.hoTen = hoTen;
-    }
-
-    public String getNgaySinh() {
-        return ngaySinh;
-    }
-
-    public void setNgaySinh(String ngaySinh) {
-        this.ngaySinh = ngaySinh;
-    }
-
-    public String getQueQuan() {
-        return queQuan;
-    }
-
-    public void setQueQuan(String queQuan) {
-        this.queQuan = queQuan;
     }
 
     public String getGhiChu() {

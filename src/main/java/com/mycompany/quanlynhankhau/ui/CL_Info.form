@@ -90,9 +90,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="info_CCCD_PC_text" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel33" alignment="1" max="32767" attributes="0"/>
                                           <Component id="jLabel36" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="info_IDHK_PC_text" alignment="1" max="32767" attributes="0"/>
                                           <Component id="jLabel40" alignment="0" pref="250" max="32767" attributes="0"/>
                                           <Component id="info_timeTest_PC_text" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel23" alignment="0" max="32767" attributes="0"/>
@@ -128,15 +126,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="info_IDNK_PC_text" linkSize="1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="info_IDHK_PC_text" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="info_IDNK_PC_text" linkSize="1" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -206,8 +198,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="info_IDHK_PC_text">
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel31">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x110;&#xe3; th&#x1ef1;c hi&#x1ec7;n test Covid-19 ch&#x1b0;a ?"/>
@@ -216,11 +206,6 @@
         <Component class="javax.swing.JLabel" name="jLabel32">
           <Properties>
             <Property name="text" type="java.lang.String" value="Th&#x1edd;i gian b&#x1eaf;t &#x111;&#x1ea7;u c&#xe1;ch ly"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel33">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ID h&#x1ed9; kh&#x1ea9;u"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel34">

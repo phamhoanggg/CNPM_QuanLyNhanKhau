@@ -27,7 +27,6 @@ public class CL_Info extends javax.swing.JPanel {
         initComponents();
         
         info_IDNK_PC_text.setText(cl.getIdNK());
-        info_IDHK_PC_text.setText(cl.getIdHK());
         info_name_PC_text.setText(cl.getHoTen());
         info_CCCD_PC_text.setText(cl.getCccd());              
         info_methodTest_PC_text.setText(cl.getHinhThuc());        
@@ -70,8 +69,7 @@ public class CL_Info extends javax.swing.JPanel {
     }
     
     public void SetEditableTextField(boolean isEditable){
-        info_IDNK_PC_text.setEditable(isEditable);
-        info_IDHK_PC_text.setEditable(isEditable);        
+        info_IDNK_PC_text.setEditable(isEditable);    
         info_name_PC_text.setEditable(isEditable);
         info_CCCD_PC_text.setEditable(isEditable);        
         info_timeTest_PC_text.setEditable(isEditable);       
@@ -90,10 +88,8 @@ public class CL_Info extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel5 = new javax.swing.JPanel();
-        info_IDHK_PC_text = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
@@ -126,8 +122,6 @@ public class CL_Info extends javax.swing.JPanel {
         jLabel31.setText("Đã thực hiện test Covid-19 chưa ?");
 
         jLabel32.setText("Thời gian bắt đầu cách ly");
-
-        jLabel33.setText("ID hộ khẩu");
 
         jLabel34.setText("Kết quả test Covid-19 lần gần nhất");
 
@@ -246,9 +240,7 @@ public class CL_Info extends javax.swing.JPanel {
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(info_CCCD_PC_text)
-                                        .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(info_IDHK_PC_text, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                                         .addComponent(info_timeTest_PC_text)
                                         .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -272,13 +264,9 @@ public class CL_Info extends javax.swing.JPanel {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel35)
-                    .addComponent(jLabel33))
+                .addComponent(jLabel35)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(info_IDNK_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(info_IDHK_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(info_IDNK_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
@@ -335,7 +323,7 @@ public class CL_Info extends javax.swing.JPanel {
                 .addContainerGap(121, Short.MAX_VALUE))
         );
 
-        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {info_IDHK_PC_text, info_IDNK_PC_text, info_methodTest_PC_text, info_name_PC_text, info_startTimeCL_PC_text, info_timeTest_PC_text});
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {info_IDNK_PC_text, info_methodTest_PC_text, info_name_PC_text, info_startTimeCL_PC_text, info_timeTest_PC_text});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -366,7 +354,6 @@ public class CL_Info extends javax.swing.JPanel {
     private void update_PC_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_PC_BtnActionPerformed
         StringBuilder sb = new StringBuilder();
         DataValidator.validateEmpty(info_IDNK_PC_text, sb, "Vui lòng nhập ID nhân khẩu!");
-        DataValidator.validateEmpty(info_IDHK_PC_text, sb, "Vui lòng nhập ID hộ khẩu!");
         DataValidator.validateEmpty(info_name_PC_text, sb, "Vui lòng nhập họ và tên!");
         DataValidator.validateEmpty(info_CCCD_PC_text, sb, "Vui lòng nhập CCCD!");
         DataValidator.validateEmpty(info_startTimeCL_PC_text, sb, "Vui lòng nhập thời gian bắt đầu cách ly!");
@@ -408,7 +395,7 @@ public class CL_Info extends javax.swing.JPanel {
                 if(info_level_F2.isSelected()) level = "1(F2)";
                 else if(info_level_F1.isSelected()) level = "1(F1)";
                 else level = "3(F0)";
-                CachLy cl = new CachLy(info_IDNK_PC_text.getText(), info_IDHK_PC_text.getText(), info_CCCD_PC_text.getText(),
+                CachLy cl = new CachLy(info_IDNK_PC_text.getText(), info_CCCD_PC_text.getText(),
                     info_name_PC_text.getText(), test, result,info_timeTest_PC_text.getText(),
                     info_methodTest_PC_text.getText(), info_startTimeCL_PC_text.getText(), level, status);
 
@@ -445,7 +432,6 @@ public class CL_Info extends javax.swing.JPanel {
     private javax.swing.JTextField info_CCCD_PC_text;
     private javax.swing.JRadioButton info_Cachly_KVCL;
     private javax.swing.JRadioButton info_Cachly_TN;
-    private javax.swing.JTextField info_IDHK_PC_text;
     private javax.swing.JTextField info_IDNK_PC_text;
     private javax.swing.JRadioButton info_done_test;
     private javax.swing.JRadioButton info_level_F0;
@@ -463,7 +449,6 @@ public class CL_Info extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;

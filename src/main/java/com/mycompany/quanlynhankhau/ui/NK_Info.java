@@ -344,22 +344,17 @@ public class NK_Info extends javax.swing.JPanel {
         NhanKhauDao dao = new NhanKhauDao();
         try{
             
-            if (dao.IsExist(info_CCCD_NK_text.getText(), info_ID_HK_text.getText())){
-                if (!info_CCCD_NK_text.getText().equals(currentNK_CCCD) && !info_ID_HK_text.getText().equals(currentNK_ID)){
-                    MessageDialogHelper.showErrorDialog(this, "Nhân khẩu đã tồn tại", "Lỗi");
-                    return;
-                }
+            if (dao.IsExist(info_CCCD_NK_text.getText(), info_ID_HK_text.getText()) != null){
+
             }
-            dao.DeleteNK(info_ID_HK_text.getText());
-                MessageDialogHelper.showMessageDialog(this, "Cập nhật thông tin nhân khẩu thành công!", "Thành công");
-                String gentle = info_isMale.isSelected() ? "Nam" : "Nữ";
-                NhanKhau nk = new NhanKhau(info_ID_NK_text.getText(), info_ID_HK_text.getText(), info_CCCD_NK_text.getText(), 
+            MessageDialogHelper.showMessageDialog(this, "Cập nhật thông tin nhân khẩu thành công!", "Thành công");
+            String gentle = info_isMale.isSelected() ? "Nam" : "Nữ";
+            NhanKhau nk = new NhanKhau(info_ID_NK_text.getText(), info_ID_HK_text.getText(), info_CCCD_NK_text.getText(), 
                                             info_Name_NK_text.getText(), info_DoB_NK_text.getText(), gentle, info_Relation_NK_text.getText(), 
                                             info_Hometown_NK_text.getText(), info_Ethnic_NK_text.getText(), info_Job_NK_text.getText(),
                                             info_ngayDKTT_text.getText(), info_noiDKTT_text.getText(), info_note_text.getText());
                 
-                dao.InsertNK(nk);
-                dao.InsertNK_HK(info_ID_HK_text.getText(), info_ID_NK_text.getText(), nk.getQuanHeVoiChuHo());
+            dao.UpdateNK(nk);    
             
         }catch (Exception e){
             printStackTrace();

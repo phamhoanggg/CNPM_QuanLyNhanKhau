@@ -6,9 +6,8 @@ package com.mycompany.quanlynhankhau.ui;
 
 import com.mycompany.quanlynhankhau.Helpers.DataValidator;
 import com.mycompany.quanlynhankhau.Helpers.MessageDialogHelper;
-import com.mycompany.quanlynhankhau.Helpers.ShareData;
-import com.mycompany.quanlynhankhau.Thongtin.NguoiQuanLy;
-import com.mycompany.quanlynhankhau.dao.NguoiQuanLyDao;
+import com.mycompany.quanlynhankhau.Thongtin.NguoiDung;
+import com.mycompany.quanlynhankhau.dao.NguoiDungDao;
 import static com.sun.corba.se.impl.util.Utility.printStackTrace;
 
 /**
@@ -17,7 +16,7 @@ import static com.sun.corba.se.impl.util.Utility.printStackTrace;
  */
 public class LoginForm extends javax.swing.JFrame {
 
-    NguoiQuanLyDao dao = new NguoiQuanLyDao();
+    NguoiDungDao dao = new NguoiDungDao();
     /**
      * Creates new form LoginForm
      */
@@ -36,6 +35,7 @@ public class LoginForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        RollGroupBtn = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -44,95 +44,145 @@ public class LoginForm extends javax.swing.JFrame {
         rememberpw_check = new javax.swing.JCheckBox();
         loginBtn = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        isAdmin = new javax.swing.JRadioButton();
+        isUser = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("LOGIN");
         jLabel1.setAlignmentX(0.5F);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel2.setText("Username");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel2.setText("Tên đăng nhập");
 
-        jLabel3.setText("Password");
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel3.setText("Mật khẩu");
 
+        usernameText.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         usernameText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 usernameTextFocusLost(evt);
             }
         });
 
-        passwordText.setText("jPasswordField1");
+        passwordText.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         passwordText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 passwordTextFocusGained(evt);
             }
         });
 
-        rememberpw_check.setText("Remember password");
+        rememberpw_check.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        rememberpw_check.setText("Nhớ mật khẩu");
+        rememberpw_check.setToolTipText("");
 
-        loginBtn.setText("Login");
+        loginBtn.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        loginBtn.setText("Đăng nhập");
         loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginBtnActionPerformed(evt);
             }
         });
 
-        exitBtn.setText("Exit");
+        exitBtn.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        exitBtn.setText("Thoát");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitBtnActionPerformed(evt);
             }
         });
 
+        jButton1.setText("Đăng ký tài khoản người dân");
+
+        jLabel4.setText("Chưa có tài khoản?");
+
+        RollGroupBtn.add(isAdmin);
+        isAdmin.setText("Người quản lý");
+
+        RollGroupBtn.add(isUser);
+        isUser.setText("Người dân");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(194, 194, 194)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(305, 305, 305)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(80, 80, 80)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rememberpw_check)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(usernameText)
-                                .addComponent(passwordText, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(loginBtn)
-                        .addGap(129, 129, 129)
-                        .addComponent(exitBtn)))
-                .addContainerGap(90, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(isUser)
+                            .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(172, 172, 172))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(isAdmin)
+                    .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rememberpw_check))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {passwordText, usernameText});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {exitBtn, loginBtn});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rememberpw_check)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(loginBtn)
+                    .addComponent(isAdmin)
+                    .addComponent(isUser))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(exitBtn))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jLabel4))
+                .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {passwordText, usernameText});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel2, jLabel3});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {exitBtn, loginBtn});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -145,23 +195,31 @@ public class LoginForm extends javax.swing.JFrame {
         StringBuilder sb = new StringBuilder();
         DataValidator.validateEmpty(usernameText, sb, "Tên đăng nhập không thể để trống!");
         DataValidator.validateEmpty(passwordText, sb, "Vui lòng nhập mật khẩu!");
+        if (!isAdmin.isSelected() && !isUser.isSelected()){
+            sb.append("Vui lòng chọn vai trò!");
+        }
         if (sb.length() > 0){
             MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
             return;
-        
         }
-        
-        
+
         try{
-            NguoiQuanLy admin = dao.checkLogin(usernameText.getText(), new String(passwordText.getPassword()));
-            if (admin == null){
+            String vaitro = isAdmin.isSelected() ? "admin" : "user";
+            NguoiDung user = dao.checkLogin(usernameText.getText(), new String(passwordText.getPassword()), vaitro);
+            if (user == null){
                 MessageDialogHelper.showErrorDialog(this, "Sai tên đăng nhập hoặc mật khẩu!", "Lỗi");
             }else{
                 MessageDialogHelper.showMessageDialog(this, "Đăng nhập thành công!", "Thành công!");
                 dao.SetRememberPassword(rememberpw_check.isSelected(), usernameText.getText());
-                HomepageForm homePage = new HomepageForm();
-                homePage.setVisible(true);
-                ShareData.NguoiDangNhap = admin;
+                if (vaitro.equals("admin")){
+                    HomepageForm homePage = new HomepageForm();
+                    homePage.setVisible(true);
+                }
+                else{
+                    UserPageForm userForm = new UserPageForm();
+                    userForm.setVisible(true);
+                }
+                
                 this.dispose();
             }
         }catch (Exception e){
@@ -228,10 +286,15 @@ public class LoginForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup RollGroupBtn;
     private javax.swing.JButton exitBtn;
+    private javax.swing.JRadioButton isAdmin;
+    private javax.swing.JRadioButton isUser;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JButton loginBtn;
     private javax.swing.JPasswordField passwordText;
     private javax.swing.JCheckBox rememberpw_check;

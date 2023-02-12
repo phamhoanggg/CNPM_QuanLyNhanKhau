@@ -6,9 +6,13 @@ package com.mycompany.quanlynhankhau.dao;
 
 import com.mycompany.quanlynhankhau.Helpers.DatabaseHelper;
 import com.mycompany.quanlynhankhau.Thongtin.CachLy;
+import com.mycompany.quanlynhankhau.Thongtin.HoKhau;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -94,6 +98,27 @@ public class CachLyDao {
             deletePrepSt1.setString(1, ID);
                      
             deletePrepSt1.execute();           
+        }
+    }
+    
+    public List<CachLy> GetAllCL() throws Exception{
+        String sql = "SELECT * FROM `cachly`";
+        
+        List<CachLy> clList = new ArrayList<>();
+        try(
+            Connection conn = DatabaseHelper.ConnectDB();
+            Statement st = conn.createStatement();
+        ){
+            ResultSet rs = st.executeQuery(sql);
+            CachLy cl;
+            while(rs.next()){
+                cl = new CachLy(rs.getString("idnhankhau"), rs.getString("cccd"), rs.getString("hoten"),
+                                rs.getString("thoigianbatdaucachly"), rs.getString("hinhthuckiemtra"), rs.getString("thoigiankiemtra"), rs.getString("dakiemtracovid"),
+                                 rs.getString("ketquakiemtra"), rs.getString("mucdocachly"), rs.getString("trangthaicachly"));
+                
+                clList.add(cl);
+            }
+            return clList;
         }
     }
 }

@@ -17,12 +17,19 @@ public class DatabaseHelper {
     private static final String DATABASE_USERNAME = "root";
     private static final String DATABASE_PASSWORD = "";
     
-    public static final String CHECKLOGIN_SQL = "select * from `users` "+
-                "  where `username` = ? and `password` = ?";
+    public static final String CHECK_LOGIN_ADMIN_SQL = "select * from `admin` "+
+                "  where `admin`.`name` = ? and `admin`.`password` = ?";
+    
+    public static final String CHECK_LOGIN_USER_SQL = "select * from `users` "+
+                "  where `users`.`username` = ? and `users`.`password` = ?";
     
     public static final String INSERT_NK_SQL = "INSERT INTO `nhankhau` (`idnhankhau`, `hoten`, `ngaysinh`, `gioitinh`, `quanhevoichuho`,"
                 + "`quequan`, `dantoc`, `nghenghiep`, `CCCD`, `ngaydangkythuongtru`, `noidangkythuongtruchuyenden`, `ghichu`) "
                 + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+    
+    public static final String UPDATE_NK_SQL = "UPDATE `nhankhau` SET `hoten` = ?, `ngaysinh` = ?, `gioitinh` = ?, `quanhevoichuho` = ?,"
+                + "`quequan` = ?, `dantoc` = ?, `nghenghiep` = ?, `CCCD` = ?, `ngaydangkythuongtru` = ?, `noidangkythuongtruchuyenden` = ?, `ghichu` = ? "+
+                "WHERE `idnhankhau` = ?";
     
     public static final String CHECKEXIST_NK_SQL = "SELECT * FROM `nhankhau`" +
                             "  WHERE `CCCD` = ? OR `idnhankhau` = ?";

@@ -7,7 +7,9 @@ package com.mycompany.quanlynhankhau.ui;
 import com.mycompany.quanlynhankhau.Helpers.DataValidator;
 import com.mycompany.quanlynhankhau.Helpers.MessageDialogHelper;
 import com.mycompany.quanlynhankhau.Thongtin.HoKhau;
+import com.mycompany.quanlynhankhau.Thongtin.NhanKhau;
 import com.mycompany.quanlynhankhau.dao.HoKhauDao;
+import com.mycompany.quanlynhankhau.dao.NhanKhauDao;
 import static com.sun.corba.se.impl.util.Utility.printStackTrace;
 
 /**
@@ -28,8 +30,6 @@ public class HK_Info extends javax.swing.JPanel {
         initComponents();
         
         info_CCCD_HK_text.setText(hk.getCccd());
-        info_Hometown_HK_text.setText(hk.getNgaySinh());
-        info_DoB_HK_text.setText(hk.getQueQuan());
         info_ID_HK_text.setText(hk.getIdHK());
         info_HTCH_HK_text.setText(hk.getHoTen());
         info_note_HK_text.setText(hk.getGhiChu());  
@@ -38,9 +38,7 @@ public class HK_Info extends javax.swing.JPanel {
     
     public void SetEditableTextField(boolean isEditable){
         info_CCCD_HK_text.setEditable(isEditable);
-        info_Hometown_HK_text.setEditable(isEditable); 
-        info_DoB_HK_text.setEditable(isEditable);
-        info_ID_HK_text.setEditable(isEditable); 
+        info_ID_HK_text.setEditable(false); 
         info_HTCH_HK_text.setEditable(isEditable);
         info_note_HK_text.setEditable(isEditable);
         update_HK_Btn.setVisible(isEditable);
@@ -57,11 +55,7 @@ public class HK_Info extends javax.swing.JPanel {
 
         jPanel2 = new javax.swing.JPanel();
         info_CCCD_HK_text = new javax.swing.JTextField();
-        info_Hometown_HK_text = new javax.swing.JTextField();
-        info_DoB_HK_text = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         info_ID_HK_text = new javax.swing.JTextField();
         info_HTCH_HK_text = new javax.swing.JTextField();
@@ -72,11 +66,7 @@ public class HK_Info extends javax.swing.JPanel {
 
         jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jLabel3.setText("Ngày sinh");
-
         jLabel4.setText("Số CCCD");
-
-        jLabel5.setText("Quê quán");
 
         jLabel6.setText("ID hộ khẩu");
 
@@ -99,24 +89,19 @@ public class HK_Info extends javax.swing.JPanel {
                 .addGap(42, 42, 42)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(info_DoB_HK_text, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(info_HTCH_HK_text)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                         .addComponent(info_ID_HK_text))
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(update_HK_Btn))
                 .addGap(172, 172, 172)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(info_CCCD_HK_text, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
-                    .addComponent(info_Hometown_HK_text)
                     .addComponent(info_note_HK_text)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(72, 72, 72))
         );
@@ -132,21 +117,13 @@ public class HK_Info extends javax.swing.JPanel {
                     .addComponent(info_ID_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(info_CCCD_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel5))
+                .addComponent(jLabel10)
                 .addGap(3, 3, 3)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(info_HTCH_HK_text, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                    .addComponent(info_Hometown_HK_text))
+                .addComponent(info_HTCH_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel15))
+                .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(info_DoB_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(info_note_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(info_note_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(update_HK_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(260, Short.MAX_VALUE))
@@ -173,30 +150,30 @@ public class HK_Info extends javax.swing.JPanel {
     private void update_HK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_HK_BtnActionPerformed
         StringBuilder sb = new StringBuilder();
         DataValidator.validateEmpty(info_CCCD_HK_text, sb, "Vui lòng nhập số CCCD!");
-        DataValidator.validateEmpty(info_DoB_HK_text, sb, "Vui lòng nhập ngày sinh!");
-        DataValidator.validateEmpty(info_Hometown_HK_text, sb, "Vui lòng nhập quê quán!");
         DataValidator.validateEmpty(info_HTCH_HK_text, sb, "Vui lòng nhập họ và tên chủ hộ!");
-        
 
         if (sb.length() > 0){
             MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
             return;
         }
-        HoKhauDao dao = new HoKhauDao();
+        NhanKhauDao nkdao = new NhanKhauDao();
+        HoKhauDao hkdao = new HoKhauDao();
         try{
+            NhanKhau nk = nkdao.IsExist(info_CCCD_HK_text.getText(), "");
+            if (nk == null){
+                MessageDialogHelper.showErrorDialog(this, "Không tồn tại nhân khẩu!", "Lỗi");
+            }else if(!nk.getHoTen().equals(info_HTCH_HK_text.getText())){
+                MessageDialogHelper.showErrorDialog(this, "Họ tên và số CCCD không tương ứng!", "Lỗi");
+            }else if (!nk.getIdHK().equals(currentHK_ID)){
+                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không thuộc hộ khẩu!", "Lỗi");
+            }else{
+                MessageDialogHelper.showMessageDialog(this, "Cập nhật thông tin hộ khẩu thành công!", "Thành công");
+                HoKhau hk = new HoKhau(info_ID_HK_text.getText(),
+                info_HTCH_HK_text.getText(), info_CCCD_HK_text.getText(), info_note_HK_text.getText());
 
-            if (dao.IsExist(info_CCCD_HK_text.getText(), info_ID_HK_text.getText())){
-                if (!info_CCCD_HK_text.getText().equals(currentHK_CCCD) && !info_ID_HK_text.getText().equals(currentHK_ID)){
-                    MessageDialogHelper.showErrorDialog(this, "Hộ khẩu đã tồn tại", "Lỗi");
-                    return;
-                }
+                hkdao.UpdateHK(hk);
             }
-            dao.DeleteHK(info_ID_HK_text.getText());
-            MessageDialogHelper.showMessageDialog(this, "Cập nhật thông tin hộ khẩu thành công!", "Thành công");
-            HoKhau hk = new HoKhau(info_ID_HK_text.getText(), info_CCCD_HK_text.getText(),
-                info_HTCH_HK_text.getText(), info_Hometown_HK_text.getText(), info_DoB_HK_text.getText(), info_note_HK_text.getText());
-
-            dao.InsertHK(hk);
+            
 
         }catch (Exception e){
             printStackTrace();
@@ -207,16 +184,12 @@ public class HK_Info extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField info_CCCD_HK_text;
-    private javax.swing.JTextField info_DoB_HK_text;
     private javax.swing.JTextField info_HTCH_HK_text;
-    private javax.swing.JTextField info_Hometown_HK_text;
     private javax.swing.JTextField info_ID_HK_text;
     private javax.swing.JTextField info_note_HK_text;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton update_HK_Btn;

@@ -9,21 +9,20 @@ package com.mycompany.quanlynhankhau.Thongtin;
  * @author HP
  */
 public class CachLy {
-    private String idNK, idHK, cccd, hoTen, tgBatDau, hinhThuc, tgKiemTra, kiemTra, ketQua, mucDo, trangThai;
+    private String idNK, cccd, hoTen, tgBatDau, hinhThuc, tgKiemTra, daKiemTra, ketQua, mucDo, trangThai;
 
 // Constructors
     public CachLy() {
     }
 
-    public CachLy(String idNK, String idHK, String cccd, String hoTen, String tgBatDau, String hinhThuc, String tgKiemTra, String kiemTra, String ketQua, String mucDo, String trangThai) {
+    public CachLy(String idNK, String cccd, String hoTen, String tgBatDau, String hinhThuc, String tgKiemTra, String daKiemTra, String ketQua, String mucDo, String trangThai) {
         this.idNK = idNK;
-        this.idHK = idHK;
         this.cccd = cccd;
         this.hoTen = hoTen;
         this.tgBatDau = tgBatDau;
         this.hinhThuc = hinhThuc;
         this.tgKiemTra = tgKiemTra;
-        this.kiemTra = kiemTra;
+        this.daKiemTra = daKiemTra;
         this.ketQua = ketQua;
         this.mucDo = mucDo;
         this.trangThai = trangThai;        
@@ -35,14 +34,6 @@ public class CachLy {
 
     public void setIdNK(String idNK) {
         this.idNK = idNK;
-    }
-
-    public String getIdHK() {
-        return idHK;
-    }
-
-    public void setIdHK(String idHK) {
-        this.idHK = idHK;
     }
 
     public String getCccd() {
@@ -86,11 +77,11 @@ public class CachLy {
     }
 
     public String getKiemTra() {
-        return kiemTra;
+        return daKiemTra;
     }
 
     public void setKiemTra(String kiemTra) {
-        this.kiemTra = kiemTra;
+        this.daKiemTra = kiemTra;
     }
 
     public String getKetQua() {
