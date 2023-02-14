@@ -1,0 +1,71 @@
+@options
+@packages
+@argfile
+-classpath
+'C:/Users/minhd/.m2/repository/com/mysql/mysql-connector-j/8.0.31/mysql-connector-j-8.0.31.jar;C:/Users/minhd/.m2/repository/com/google/protobuf/protobuf-java/3.19.4/protobuf-java-3.19.4.jar;C:/Users/minhd/.m2/repository/org/netbeans/external/AbsoluteLayout/RELEASE150/AbsoluteLayout-RELEASE150.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'D:/CNPM/CNPM_QuanLyNhanKhau/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Quanlynhankhau 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'D:/CNPM/CNPM_QuanLyNhanKhau/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'Quanlynhankhau 1.0-SNAPSHOT API'
+com.mycompany.quanlynhankhau.dao
+com.mycompany.quanlynhankhau.Helpers
+com.mycompany.quanlynhankhau
+com.mycompany.quanlynhankhau.Thongtin
+com.mycompany.quanlynhankhau.ui
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/dao/CachLyDao.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/dao/HoKhauDao.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/dao/NguoiDungDao.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/dao/NhanKhauDao.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/Helpers/DatabaseHelper.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/Helpers/DataValidator.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/Helpers/MessageDialogHelper.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/Main.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/Thongtin/CachLy.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/Thongtin/HoKhau.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/Thongtin/NguoiDung.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/Thongtin/NhanKhau.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/ui/CL_Info.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/ui/HK_Info.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/ui/HomepageForm.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/ui/LoginForm.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/ui/NK_Info.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/ui/SignupForm.java'
+'D:/CNPM/CNPM_QuanLyNhanKhau/src/main/java/com/mycompany/quanlynhankhau/ui/UserPageForm.java'
+C:\Users\minhd\.m2\repository\com\mysql\mysql-connector-j\8.0.31\mysql-connector-j-8.0.31.jar = 1672705137248
+C:\Users\minhd\.m2\repository\com\google\protobuf\protobuf-java\3.19.4\protobuf-java-3.19.4.jar = 1672705128252
+C:\Users\minhd\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE150\AbsoluteLayout-RELEASE150.jar = 1675901163828
+D:\CNPM\CNPM_QuanLyNhanKhau\src\main\java = 1673095000538
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\allclasses-frame.html = 1676368351960
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\allclasses-noframe.html = 1676368351963
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\constant-values.html = 1676368351738
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\deprecated-list.html = 1676368351955
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\help-doc.html = 1676368351974
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\index-all.html = 1676368351951
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\index.html = 1676368351966
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\overview-frame.html = 1676368351654
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\overview-summary.html = 1676368351970
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\overview-tree.html = 1676368351934
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\package-list = 1676368351651
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\script.js = 1676368351978
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\serialized-form.html = 1676368351760
+D:\CNPM\CNPM_QuanLyNhanKhau\target\apidocs\stylesheet.css = 1676368351976

@@ -5,14 +5,9 @@
 
 package com.mycompany.quanlynhankhau;
 
-import com.mycompany.quanlynhankhau.ui.HomepageForm;
 import com.mycompany.quanlynhankhau.ui.LoginForm;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.awt.Dimension;
+
 
 /**
  *
@@ -25,8 +20,8 @@ public class Main {
      */
     public static void main(String[] args) {    
         LoginForm login = new LoginForm();
+
         login.setVisible(true);
-
-
+        
     }
 }

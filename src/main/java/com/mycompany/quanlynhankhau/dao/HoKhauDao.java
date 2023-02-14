@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -75,7 +76,7 @@ public class HoKhauDao {
         }
     }
     
-    public List<NhanKhau> GetDanhSachNhanKhau(String idhokhau) throws Exception{
+    public List<NhanKhau> GetNKInHK(String idhokhau) throws Exception{
         String sql = "SELECT * FROM `nhankhau` WHERE `idhokhau` = ?";
         List<NhanKhau> nkList = new ArrayList<>();
         try(
@@ -112,6 +113,11 @@ public class HoKhauDao {
                 hk = new HoKhau(rs.getString("idhokhau"), rs.getString("hotenchuho"), rs.getString("cccd"), rs.getString("ghichu"));
                 
                 hkList.add(hk);
+            }
+            if (!hkList.isEmpty()){
+                Collections.sort(hkList, (d1, d2) -> {
+                    return Integer.parseInt(d1.getIdHK()) - Integer.parseInt(d2.getIdHK());
+                });
             }
             return hkList;
         }

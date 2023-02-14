@@ -6,11 +6,13 @@ package com.mycompany.quanlynhankhau.dao;
 
 import com.mycompany.quanlynhankhau.Helpers.DatabaseHelper;
 import com.mycompany.quanlynhankhau.Thongtin.NhanKhau;
+import com.mysql.cj.x.protobuf.MysqlxCrud;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -18,7 +20,7 @@ import java.util.List;
  * @author minhd
  */
 public class NhanKhauDao {
-    public NhanKhau IsExist(String CCCD, String id) throws Exception{
+    public NhanKhau GetNK(String CCCD, String id) throws Exception{
         try(
             Connection conn = DatabaseHelper.ConnectDB();
             PreparedStatement checkPrepSt = conn.prepareStatement(DatabaseHelper.CHECKEXIST_NK_SQL);    
@@ -39,6 +41,26 @@ public class NhanKhauDao {
             return nk;
         }
     }
+    
+    public boolean IsHaveAccount(String CCCD) throws Exception{
+        try(
+            Connection conn = DatabaseHelper.ConnectDB();
+            PreparedStatement checkPrepSt = conn.prepareStatement(DatabaseHelper.CHECKEXIST_NK_SQL);    
+            ){
+            checkPrepSt.setString(1,CCCD);
+            checkPrepSt.setString(2,"");
+
+            ResultSet rs = checkPrepSt.executeQuery();
+
+            if (rs.next()){
+                if (!rs.getString("username").equals("")){
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+            
     
     public void InsertNK(NhanKhau nk) throws Exception{
         
@@ -82,38 +104,12 @@ public class NhanKhauDao {
                 
                 nkList.add(nk);
             }
-            return nkList;
-        }
-    }
-    public NhanKhau SearchNK(String ID) throws Exception{
-        try(
-            Connection conn = DatabaseHelper.ConnectDB();
-            PreparedStatement searchPrepSt = conn.prepareStatement(DatabaseHelper.SEARCH_NK_SQL);
-        ){
-            searchPrepSt.setString(1, ID);
-
-            ResultSet rs = searchPrepSt.executeQuery();
-            if (rs.next()){
-                NhanKhau nk = new NhanKhau();
-                
-                nk.setIdNK(ID);
-                nk.setIdHK(rs.getString("idhokhau"));
-                nk.setCccd(rs.getString("CCCD"));
-                nk.setDanToc(rs.getString("dantoc"));
-                nk.setGioiTinh(rs.getString("gioitinh"));
-                nk.setHoTen(rs.getString("hoten"));
-                nk.setNgaySinh(rs.getString("ngaysinh"));
-                nk.setQuanHeVoiChuHo(rs.getString("quanhevoichuho"));
-                nk.setNgheNghiep(rs.getString("nghenghiep"));
-                nk.setQueQuan(rs.getString("quequan"));
-                nk.setNoiDkThuongTru(rs.getString("noidangkythuongtruchuyenden"));
-                nk.setNgayDkThuongTru(rs.getString("ngaydangkythuongtru"));
-                nk.setGhiChu(rs.getString("ghichu"));
-                
-                return nk;
-            }else{
-                return null;
+            if (!nkList.isEmpty()){
+                Collections.sort(nkList, (d1, d2) -> {
+                    return Integer.parseInt(d1.getIdNK()) - Integer.parseInt(d2.getIdNK());
+                });
             }
+            return nkList;
         }
     }
     

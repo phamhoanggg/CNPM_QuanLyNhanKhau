@@ -16,7 +16,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="712" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="1048" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
@@ -53,7 +53,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace pref="54" max="32767" attributes="0"/>
+                  <EmptySpace pref="226" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="info_Cachly_KVCL" min="-2" max="-2" attributes="0"/>
@@ -86,7 +86,7 @@
                                       <Component id="info_methodTest_PC_text" alignment="1" max="32767" attributes="0"/>
                                       <Component id="info_Cachly_TN" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="54" max="32767" attributes="0"/>
+                                  <EmptySpace pref="139" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="info_CCCD_PC_text" alignment="0" max="32767" attributes="0"/>
@@ -116,7 +116,7 @@
                               <Component id="jLabel28" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel44" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="56" max="32767" attributes="0"/>
+                          <EmptySpace pref="142" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>

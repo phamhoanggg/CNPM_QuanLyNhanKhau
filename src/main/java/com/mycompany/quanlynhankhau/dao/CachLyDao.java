@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -117,6 +118,11 @@ public class CachLyDao {
                                  rs.getString("ketquakiemtra"), rs.getString("mucdocachly"), rs.getString("trangthaicachly"));
                 
                 clList.add(cl);
+            }
+            if (!clList.isEmpty()){
+                Collections.sort(clList, (d1, d2) -> {
+                    return Integer.parseInt(d1.getIdNK()) - Integer.parseInt(d2.getIdNK());
+                });
             }
             return clList;
         }

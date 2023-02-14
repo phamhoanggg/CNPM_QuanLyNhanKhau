@@ -20,8 +20,8 @@ public class DatabaseHelper {
     public static final String CHECK_LOGIN_ADMIN_SQL = "select * from `admin` "+
                 "  where `admin`.`name` = ? and `admin`.`password` = ?";
     
-    public static final String CHECK_LOGIN_USER_SQL = "select * from `users` "+
-                "  where `users`.`username` = ? and `users`.`password` = ?";
+    public static final String CHECK_LOGIN_USER_SQL = "select * from `nhankhau` "+
+                "  where `username` = ? and `password` = ?";
     
     public static final String INSERT_NK_SQL = "INSERT INTO `nhankhau` (`idnhankhau`, `hoten`, `ngaysinh`, `gioitinh`, `quanhevoichuho`,"
                 + "`quequan`, `dantoc`, `nghenghiep`, `CCCD`, `ngaydangkythuongtru`, `noidangkythuongtruchuyenden`, `ghichu`) "
@@ -37,7 +37,7 @@ public class DatabaseHelper {
     public static final String INSERT_NK_HK_SQL = "INSERT INTO `nhankhau_hokhau`(`idhokhau`, `idnhankhau`, `quanhevoichuho`)"+
                                 "VALUES (?, ?, ?)";
     
-    public static final String SEARCH_NK_SQL = "SELECT * FROM `nhankhau` JOIN `nhankhau_hokhau` ON `nhankhau`.`idnhankhau` = `nhankhau_hokhau`.`idnhankhau`"+
+    public static final String SEARCH_NK_SQL = "SELECT * FROM `nhankhau`"+
                             "  WHERE `nhankhau`.`idnhankhau` = ?";
     
     public static final String DELETE_NK_SQL = "DELETE `nhankhau`,`nhankhau_hokhau` FROM `nhankhau` INNER JOIN `nhankhau_hokhau` ON `nhankhau`.`idnhankhau` = `nhankhau_hokhau`.`idnhankhau`"+

@@ -34,8 +34,23 @@ public class NguoiDungDao {
         return null;
     }
     
+    public void SignUp(String CCCD, String username, String password) throws Exception{
+        String sql = "UPDATE `nhankhau` SET `username` = ?, `password` = ? WHERE `CCCD` = ?";
+        
+        try(
+            Connection conn = DatabaseHelper.ConnectDB();
+            PreparedStatement prepSt = conn.prepareStatement(sql);
+        ){
+            prepSt.setString(1, username);
+            prepSt.setString(2, password);
+            prepSt.setString(3, CCCD);
+
+            prepSt.execute();
+        }
+    }
+    
     public void SetRememberPassword(boolean isRemember, String username) throws Exception{
-        String sql1 = "UPDATE `users` SET `rememberPassword` = ? WHERE `username` = ?";
+        String sql1 = "UPDATE `nhankhau` SET `rememberPassword` = ? WHERE `username` = ?";
         String sql2 = "UPDATE `admin` SET `rememberPassword` = ? WHERE `name` = ?";
 
         
@@ -57,22 +72,35 @@ public class NguoiDungDao {
     }
     
     public String GetRememberPassword(String username) throws Exception{
-        String sql = "SELECT * FROM `users`, `admin` WHERE `users`.`username` = ? or `admin`.`name` = ?";
+        String sql1 = "SELECT * FROM `admin` WHERE `name` = ?";
+        String sql2 = "SELECT * FROM `nhankhau` WHERE `username` = ?";
+
         try(
             Connection conn = DatabaseHelper.ConnectDB();
-            PreparedStatement prepSt = conn.prepareStatement(sql);
+            PreparedStatement prepSt1 = conn.prepareStatement(sql1);
+            PreparedStatement prepSt2 = conn.prepareStatement(sql2);
+
         ){
-            prepSt.setString(1, username);
-            prepSt.setString(2, username);
+            prepSt1.setString(1, username);
+            prepSt2.setString(1, username);
 
 
-            try(ResultSet rs = prepSt.executeQuery();){
-                if(rs.next()){
-                    int isRemember = rs.getInt(3);
+            try(
+                ResultSet rs1 = prepSt1.executeQuery();
+                ResultSet rs2 = prepSt2.executeQuery();
+            ){
+                if(rs1.next()){
+                    int isRemember = rs1.getInt("rememberPassword");
                     if (isRemember == 1){
-                        String password = rs.getString(2);
+                        String password = rs1.getString("password");
                         return password;
                     }  
+                }else if (rs2.next()){
+                    int isRemember = rs2.getInt("rememberPassword");
+                    if (isRemember == 1){
+                        String password = rs2.getString("password");
+                        return password;
+                    }
                 }    
             }
         }

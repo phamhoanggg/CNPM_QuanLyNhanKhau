@@ -33,4 +33,33 @@ public class DataValidator {
             field.setBackground(Color.white);
         }
     }
+    
+    public static void DateValidator(String Day, String Month, String Year, StringBuilder sb, String errorMessage){
+        int day = Integer.parseInt(Day);
+        int month = Integer.parseInt(Month);
+        int year = Integer.parseInt(Year);
+        if (month <= 7){
+            if (month % 2 == 1 && day == 31){
+                sb.append(errorMessage).append("\n");
+            }else if (month % 2 == 0){
+                if (year % 4 == 0 && year % 100 != 0 && day > 29){
+                    sb.append(errorMessage).append("\n");
+                }else if (year % 400 == 0 && day > 29){
+                    sb.append(errorMessage).append("\n");
+                }else{
+                    if (day > 28){
+                        sb.append(errorMessage).append("\n");
+                    }
+                }
+            }
+        }else{
+            if (month % 2 == 1 && day == 31){
+                sb.append(errorMessage).append("\n");
+            }
+        }
+    }
+    
+    public static String DatePerformer(String day, String month, String year){
+        return year + "-" + month + " " + day;  
+    }
 }
