@@ -26,7 +26,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="18" max="32767" attributes="0"/>
+              <EmptySpace pref="10" max="32767" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -46,29 +46,29 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="update_HK_Btn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="89" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="info_HTCH_HK_text" linkSize="1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
-                          <Component id="info_ID_HK_text" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                      <Component id="update_HK_Btn" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="info_HTCH_HK_text" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="info_ID_HK_text" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel6" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="info_CCCD_HK_text" linkSize="1" alignment="0" pref="255" max="32767" attributes="0"/>
+                              <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
+                              <Component id="info_note_HK_text" linkSize="1" alignment="0" pref="255" max="32767" attributes="0"/>
+                              <Component id="jLabel4" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Component id="jLabel6" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="info_CCCD_HK_text" linkSize="1" alignment="0" pref="255" max="32767" attributes="0"/>
-                      <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
-                      <Component id="info_note_HK_text" linkSize="1" alignment="0" pref="255" max="32767" attributes="0"/>
-                      <Component id="jLabel4" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="90" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -107,28 +107,55 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="info_CCCD_HK_text">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="20" style="0"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="20" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="S&#x1ed1; CCCD"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="20" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="ID h&#x1ed9; kh&#x1ea9;u"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="info_ID_HK_text">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="20" style="0"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="info_HTCH_HK_text">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="20" style="0"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="20" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="H&#x1ecd; v&#xe0; t&#xea;n ch&#x1ee7; h&#x1ed9;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="update_HK_Btn">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="20" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;t"/>
           </Properties>
           <Events>
@@ -137,10 +164,18 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="20" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Ghi ch&#xfa;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="info_note_HK_text">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="20" style="0"/>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

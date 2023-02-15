@@ -58,28 +58,21 @@ public class CachLyDao {
         }
     }
     
-    public CachLy SearchCL(String ID) throws Exception{
+    public CachLy SearchCL(String info) throws Exception{
         String search_CL_sql = "SELECT * FROM `cachly`"+
-                            "  WHERE `cachly`.`idnhankhau` = ?";
+                            "  WHERE `cachly`.`idnhankhau` = ? OR `cachly`.`CCCD` = ?";
         try(
             Connection conn = DatabaseHelper.ConnectDB();
             PreparedStatement searchPrepSt = conn.prepareStatement(search_CL_sql);
         ){
-            searchPrepSt.setString(1, ID);
-
+            searchPrepSt.setString(1, info);
+            searchPrepSt.setString(2, info);
             ResultSet rs = searchPrepSt.executeQuery();
             if (rs.next()){
-                CachLy cl = new CachLy();
+                CachLy cl = new CachLy(rs.getString("idnhankhau"), rs.getString("CCCD"), rs.getString("hoten"),
+                                rs.getString("thoigianbatdaucachly"), rs.getString("hinhthuckiemtra"), rs.getString("thoigiankiemtra"), rs.getString("dakiemtracovid"),
+                                 rs.getString("ketquakiemtra"), rs.getString("mucdocachly"), rs.getString("trangthaicachly"));
                 
-                cl.setIdNK("idnhankhau");
-                cl.setHoTen("hoten");
-                cl.setTrangThai("trangthaicachly");
-                cl.setTgBatDau("thoigianbatdaucachly");
-                cl.setMucDo("mucdocachly");
-                cl.setKiemTra("dakiemtracovid");
-                cl.setHinhThuc("hinhthuckiemtra");
-                cl.setTgKiemTra("thoigiankiemtra");
-                cl.setKetQua("ketquakiemtra");
                 
                 return cl;
             }else{
@@ -113,7 +106,7 @@ public class CachLyDao {
             ResultSet rs = st.executeQuery(sql);
             CachLy cl;
             while(rs.next()){
-                cl = new CachLy(rs.getString("idnhankhau"), rs.getString("cccd"), rs.getString("hoten"),
+                cl = new CachLy(rs.getString("idnhankhau"), rs.getString("CCCD"), rs.getString("hoten"),
                                 rs.getString("thoigianbatdaucachly"), rs.getString("hinhthuckiemtra"), rs.getString("thoigiankiemtra"), rs.getString("dakiemtracovid"),
                                  rs.getString("ketquakiemtra"), rs.getString("mucdocachly"), rs.getString("trangthaicachly"));
                 

@@ -46,21 +46,21 @@ public class UserPageForm extends javax.swing.JFrame {
         jTabbedPane5 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
-        search_ID_NK2 = new javax.swing.JTextField();
-        Show_NK_Btn2 = new javax.swing.JButton();
-        ShowTabPane4 = new javax.swing.JTabbedPane();
+        search_ID_NK = new javax.swing.JTextField();
+        Show_NK_Btn = new javax.swing.JButton();
+        ShowNKInfo = new javax.swing.JTabbedPane();
         jTabbedPane6 = new javax.swing.JTabbedPane();
         jPanel9 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
         Search_ID_HK = new javax.swing.JTextField();
         Show_HK_Btn = new javax.swing.JButton();
-        ShowTabPane1 = new javax.swing.JTabbedPane();
+        ShowHKInfo = new javax.swing.JTabbedPane();
         jTabbedPane7 = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         Search_IDNK_PC = new javax.swing.JTextField();
         Show_PC_Btn = new javax.swing.JButton();
-        ShowTabPane2 = new javax.swing.JTabbedPane();
+        ShowPCInfo = new javax.swing.JTabbedPane();
         jTabbedPane8 = new javax.swing.JTabbedPane();
         logoutBtn = new javax.swing.JButton();
 
@@ -68,23 +68,32 @@ public class UserPageForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Trang thông tin quản lý nhân khẩu tổ dân cư số 7");
 
         HK_Tab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        HK_Tab.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        HK_Tab.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
 
-        jTabbedPane5.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jTabbedPane5.setFont(new java.awt.Font("Segoe UI", 2, 20)); // NOI18N
 
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Nhập ID nhân khẩu:");
+        jLabel25.setText("Nhập ID hoặc CCCD nhân khẩu:");
         jLabel25.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Show_NK_Btn2.setText("Hiển thị");
-        Show_NK_Btn2.addActionListener(new java.awt.event.ActionListener() {
+        search_ID_NK.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        search_ID_NK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Show_NK_Btn2ActionPerformed(evt);
+                search_ID_NKActionPerformed(evt);
+            }
+        });
+
+        Show_NK_Btn.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        Show_NK_Btn.setText("Hiển thị");
+        Show_NK_Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Show_NK_BtnActionPerformed(evt);
             }
         });
 
@@ -93,17 +102,21 @@ public class UserPageForm extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ShowTabPane4)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 262, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(search_ID_NK2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(Show_NK_Btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 367, Short.MAX_VALUE)))
+                        .addGap(568, 568, 568)
+                        .addComponent(search_ID_NK, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 568, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ShowNKInfo))))
                 .addContainerGap())
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(621, 621, 621)
+                .addComponent(Show_NK_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,29 +124,31 @@ public class UserPageForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel25)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(search_ID_NK2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(search_ID_NK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(Show_NK_Btn2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ShowTabPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(Show_NK_Btn)
+                .addGap(18, 18, 18)
+                .addComponent(ShowNKInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("Hiển thị", jPanel4);
 
         HK_Tab.addTab("Nhân khẩu", jTabbedPane5);
 
-        jTabbedPane6.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jTabbedPane6.setFont(new java.awt.Font("Segoe UI", 2, 20)); // NOI18N
 
+        jLabel47.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel47.setText("Nhập ID hộ khẩu");
+        jLabel47.setText("Nhập ID hộ khẩu hoặc CCCD chủ hộ");
 
+        Search_ID_HK.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         Search_ID_HK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Search_ID_HKActionPerformed(evt);
             }
         });
 
+        Show_HK_Btn.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         Show_HK_Btn.setText("Hiển thị");
         Show_HK_Btn.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         Show_HK_Btn.addActionListener(new java.awt.event.ActionListener() {
@@ -147,20 +162,19 @@ public class UserPageForm extends javax.swing.JFrame {
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, 1380, Short.MAX_VALUE)
+                    .addComponent(ShowHKInfo)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ShowTabPane1)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Search_ID_HK, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(Show_HK_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap(319, Short.MAX_VALUE)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Show_HK_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Search_ID_HK, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(322, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,7 +186,7 @@ public class UserPageForm extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(Show_HK_Btn)
                 .addGap(18, 18, 18)
-                .addComponent(ShowTabPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
+                .addComponent(ShowHKInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -180,11 +194,15 @@ public class UserPageForm extends javax.swing.JFrame {
 
         HK_Tab.addTab("Hộ khẩu", jTabbedPane6);
 
-        jTabbedPane7.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jTabbedPane7.setFont(new java.awt.Font("Segoe UI", 2, 20)); // NOI18N
 
+        jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel46.setText("Nhập ID nhân khẩu ");
+        jLabel46.setText("Nhập ID hoặc CCCD nhân khẩu ");
 
+        Search_IDNK_PC.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+
+        Show_PC_Btn.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         Show_PC_Btn.setText("Hiển thị");
         Show_PC_Btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,11 +220,11 @@ public class UserPageForm extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ShowTabPane2)))
+                            .addComponent(ShowPCInfo)))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addContainerGap(318, Short.MAX_VALUE)
+                        .addContainerGap(568, Short.MAX_VALUE)
                         .addComponent(Search_IDNK_PC, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 317, Short.MAX_VALUE)))
+                        .addGap(0, 568, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -220,10 +238,10 @@ public class UserPageForm extends javax.swing.JFrame {
                 .addComponent(jLabel46)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Search_IDNK_PC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Show_PC_Btn)
                 .addGap(18, 18, 18)
-                .addComponent(ShowTabPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
+                .addComponent(ShowPCInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -232,6 +250,7 @@ public class UserPageForm extends javax.swing.JFrame {
         HK_Tab.addTab("Phòng Covid", jTabbedPane7);
         HK_Tab.addTab("Thông báo", jTabbedPane8);
 
+        logoutBtn.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         logoutBtn.setText("Đăng xuất");
         logoutBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,21 +262,24 @@ public class UserPageForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(HK_Tab)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(logoutBtn)
-                .addGap(55, 55, 55))
+                .addGap(102, 102, 102))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HK_Tab))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(logoutBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(HK_Tab))
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(logoutBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(HK_Tab, javax.swing.GroupLayout.PREFERRED_SIZE, 763, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -265,7 +287,7 @@ public class UserPageForm extends javax.swing.JFrame {
 
     private void Show_HK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_HK_BtnActionPerformed
         StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(Search_ID_HK, sb, "Vui lòng nhập ID hộ khẩu cần hiển thị!");
+        DataValidator.validateEmpty(Search_ID_HK, sb, "Vui lòng nhập ID hộ khẩu hoặc số CCCD chủ hộ cần hiển thị!");
         
         if (sb.length() > 0){
             MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
@@ -280,8 +302,8 @@ public class UserPageForm extends javax.swing.JFrame {
             }else{
                 HK_Info infoTab = new HK_Info(hk);
                 infoTab.SetEditableTextField(false);
-                ShowTabPane1.removeAll();
-                ShowTabPane1.addTab("Hiển thị", infoTab);
+                ShowHKInfo.removeAll();
+                ShowHKInfo.addTab("Hiển thị", infoTab);
             }
         }catch (Exception e){
             MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
@@ -292,13 +314,32 @@ public class UserPageForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Search_ID_HKActionPerformed
 
-    private void Show_NK_Btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_NK_Btn2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Show_NK_Btn2ActionPerformed
+    private void Show_NK_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_NK_BtnActionPerformed
+        StringBuilder sb = new StringBuilder();
+        DataValidator.validateEmpty(search_ID_NK, sb, "Vui lòng nhập ID hoặc CCCD nhân khẩu!");
+        if (sb.length() > 0){
+            MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
+        }else{
+            NhanKhauDao dao = new NhanKhauDao();
+            try{
+                NhanKhau nk = dao.GetNK(search_ID_NK.getText(), search_ID_NK.getText());
+                if (nk == null){
+                    MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
+                }else{
+                    NK_Info infoTab = new NK_Info(nk);
+                    infoTab.SetEditableTextField(false);
+                    ShowNKInfo.removeAll();
+                    ShowNKInfo.addTab("Hiển thị", infoTab);
+                }
+            }catch (Exception e){
+                MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
+            }
+        }
+    }//GEN-LAST:event_Show_NK_BtnActionPerformed
 
     private void Show_PC_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_PC_BtnActionPerformed
         StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(Search_IDNK_PC, sb, "Vui lòng nhập ID nhân khẩu cần hiển thị thông tin liên quan Covid-19!");
+        DataValidator.validateEmpty(Search_IDNK_PC, sb, "Vui lòng nhập ID hoặc CCCD của nhân khẩu cần hiển thị thông tin liên quan Covid-19!");
 
         if (sb.length() > 0){
             MessageDialogHelper.showErrorDialog(this, sb.toString(), "Lỗi");
@@ -313,8 +354,8 @@ public class UserPageForm extends javax.swing.JFrame {
             }else{
                 CL_Info infoTab = new CL_Info(cl);
                 infoTab.SetEditableTextField(false);
-                ShowTabPane2.removeAll();
-                ShowTabPane2.addTab("Hiển thị", infoTab);
+                ShowPCInfo.removeAll();
+                ShowPCInfo.addTab("Hiển thị", infoTab);
             }
         }catch (Exception e){
             MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
@@ -322,10 +363,12 @@ public class UserPageForm extends javax.swing.JFrame {
     }//GEN-LAST:event_Show_PC_BtnActionPerformed
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
-        LoginForm loginForm = new LoginForm();
-        loginForm.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_logoutBtnActionPerformed
+
+    private void search_ID_NKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_ID_NKActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_ID_NKActionPerformed
 
 
 
@@ -333,11 +376,11 @@ public class UserPageForm extends javax.swing.JFrame {
     private javax.swing.JTabbedPane HK_Tab;
     private javax.swing.JTextField Search_IDNK_PC;
     private javax.swing.JTextField Search_ID_HK;
-    private javax.swing.JTabbedPane ShowTabPane1;
-    private javax.swing.JTabbedPane ShowTabPane2;
-    private javax.swing.JTabbedPane ShowTabPane4;
+    private javax.swing.JTabbedPane ShowHKInfo;
+    private javax.swing.JTabbedPane ShowNKInfo;
+    private javax.swing.JTabbedPane ShowPCInfo;
     private javax.swing.JButton Show_HK_Btn;
-    private javax.swing.JButton Show_NK_Btn2;
+    private javax.swing.JButton Show_NK_Btn;
     private javax.swing.JButton Show_PC_Btn;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel2;
@@ -353,7 +396,7 @@ public class UserPageForm extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane7;
     private javax.swing.JTabbedPane jTabbedPane8;
     private javax.swing.JButton logoutBtn;
-    private javax.swing.JTextField search_ID_NK2;
+    private javax.swing.JTextField search_ID_NK;
     // End of variables declaration//GEN-END:variables
 
 

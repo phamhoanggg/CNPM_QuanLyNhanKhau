@@ -104,11 +104,9 @@ public class CL_Info extends javax.swing.JPanel {
         info_notdone_test = new javax.swing.JRadioButton();
         info_CCCD_PC_text = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
         info_startTimeCL_PC_text = new javax.swing.JTextField();
         info_positive = new javax.swing.JRadioButton();
         info_negative = new javax.swing.JRadioButton();
-        jLabel28 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         info_level_F2 = new javax.swing.JRadioButton();
@@ -119,24 +117,38 @@ public class CL_Info extends javax.swing.JPanel {
 
         jPanel5.setBorder(new javax.swing.border.MatteBorder(null));
 
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel31.setText("Đã thực hiện test Covid-19 chưa ?");
 
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel32.setText("Thời gian bắt đầu cách ly");
 
+        jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel34.setText("Kết quả test Covid-19 lần gần nhất");
 
+        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel35.setText("ID nhân khẩu");
 
+        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel36.setText("Số CCCD");
 
+        info_IDNK_PC_text.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+
+        info_name_PC_text.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel38.setText("Họ và tên");
 
+        info_methodTest_PC_text.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+
+        info_timeTest_PC_text.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         info_timeTest_PC_text.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 info_timeTest_PC_textActionPerformed(evt);
             }
         });
 
+        update_PC_Btn.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         update_PC_Btn.setText("Cập nhật");
         update_PC_Btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,8 +156,10 @@ public class CL_Info extends javax.swing.JPanel {
             }
         });
 
+        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel39.setText("Hình thức kiểm tra");
 
+        info_done_test.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         info_done_test.setText("Đã thực hiện");
         info_done_test.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,6 +167,7 @@ public class CL_Info extends javax.swing.JPanel {
             }
         });
 
+        info_notdone_test.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         info_notdone_test.setText("Chưa thực hiện");
         info_notdone_test.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,19 +175,22 @@ public class CL_Info extends javax.swing.JPanel {
             }
         });
 
+        info_CCCD_PC_text.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         info_CCCD_PC_text.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 info_CCCD_PC_textActionPerformed(evt);
             }
         });
 
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel40.setText("Thời gian kiểm tra");
 
-        jLabel44.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel44.setText("Nếu dương tính điền thông tin bên dưới");
+        info_startTimeCL_PC_text.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
 
+        info_positive.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         info_positive.setText("Dương tính");
 
+        info_negative.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         info_negative.setText("Âm tính");
         info_negative.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,13 +198,13 @@ public class CL_Info extends javax.swing.JPanel {
             }
         });
 
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel28.setText("Nếu đã thực hiện điền thông tin bên dưới ");
-
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel23.setText("Mức độ cách ly");
 
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel22.setText("Trạng thái cách ly");
 
+        info_level_F2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         info_level_F2.setText("1 (F2)");
         info_level_F2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,12 +212,16 @@ public class CL_Info extends javax.swing.JPanel {
             }
         });
 
+        info_level_F1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         info_level_F1.setText("2 (F1)");
 
+        info_level_F0.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         info_level_F0.setText("3 (F0)");
 
+        info_Cachly_TN.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         info_Cachly_TN.setText("Tại nhà");
 
+        info_Cachly_KVCL.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         info_Cachly_KVCL.setText("Tại khu vực cách ly ");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -207,58 +229,53 @@ public class CL_Info extends javax.swing.JPanel {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(226, Short.MAX_VALUE)
+                .addGap(226, 226, 226)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(info_Cachly_KVCL)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(info_startTimeCL_PC_text)
+                            .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(info_IDNK_PC_text)
                             .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(info_done_test, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(info_notdone_test, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(info_name_PC_text)
+                            .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(info_positive, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(info_negative, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(info_methodTest_PC_text, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(info_Cachly_TN, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(info_startTimeCL_PC_text)
-                                    .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(info_IDNK_PC_text)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(info_done_test, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(info_notdone_test, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(info_name_PC_text)
-                                    .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(info_positive, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(info_negative, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(info_methodTest_PC_text, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(info_Cachly_TN, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(info_CCCD_PC_text)
-                                        .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                                        .addComponent(info_timeTest_PC_text)
-                                        .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(info_level_F2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(info_level_F1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(info_level_F0, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                                .addGap(42, 42, 42)
-                                                .addComponent(update_PC_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(142, Short.MAX_VALUE))))
+                                    .addComponent(info_timeTest_PC_text)
+                                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                    .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addComponent(info_level_F2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(info_level_F1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(info_level_F0, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addGap(125, 125, 125)
+                                    .addComponent(update_PC_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(info_CCCD_PC_text, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)))
+                        .addGap(142, 142, 142))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,25 +284,28 @@ public class CL_Info extends javax.swing.JPanel {
                 .addComponent(jLabel35)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(info_IDNK_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38)
-                    .addComponent(jLabel36))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(info_name_PC_text, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                    .addComponent(info_CCCD_PC_text))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel31)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(info_done_test)
-                    .addComponent(info_notdone_test))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel28)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel38)
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(info_name_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 34, Short.MAX_VALUE)
+                            .addComponent(info_CCCD_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(info_done_test)
+                            .addComponent(info_notdone_test))
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel36)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -294,15 +314,13 @@ public class CL_Info extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel39))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
+                        .addGap(33, 33, 33)
                         .addComponent(jLabel40)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(info_timeTest_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(info_methodTest_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel44)
-                .addGap(18, 18, 18)
+                .addGap(52, 52, 52)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
                     .addComponent(jLabel23))
@@ -320,16 +338,16 @@ public class CL_Info extends javax.swing.JPanel {
                     .addComponent(update_PC_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(info_Cachly_KVCL)
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addGap(121, 121, 121))
         );
 
-        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {info_IDNK_PC_text, info_methodTest_PC_text, info_name_PC_text, info_startTimeCL_PC_text, info_timeTest_PC_text});
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {info_CCCD_PC_text, info_IDNK_PC_text, info_methodTest_PC_text, info_name_PC_text, info_startTimeCL_PC_text, info_timeTest_PC_text});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1048, Short.MAX_VALUE)
+            .addGap(0, 1080, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -338,7 +356,7 @@ public class CL_Info extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 801, Short.MAX_VALUE)
+            .addGap(0, 831, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -446,7 +464,6 @@ public class CL_Info extends javax.swing.JPanel {
     private javax.swing.JTextField info_timeTest_PC_text;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel34;
@@ -455,7 +472,6 @@ public class CL_Info extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel44;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JButton update_PC_Btn;
     // End of variables declaration//GEN-END:variables

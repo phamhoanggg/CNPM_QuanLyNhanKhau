@@ -20,9 +20,9 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="981" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="1308" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel2" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -32,12 +32,12 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="726" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="731" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -57,7 +57,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="179" max="32767" attributes="0"/>
+                  <EmptySpace pref="342" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
@@ -81,7 +81,7 @@
                       </Group>
                       <Component id="update_NK_Btn" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
+                  <EmptySpace pref="113" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel15" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
@@ -100,7 +100,7 @@
                       </Group>
                       <Component id="info_note_text" linkSize="2" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="175" max="32767" attributes="0"/>
+                  <EmptySpace pref="339" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -140,7 +140,7 @@
                               <Component id="info_isMale" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="info_isFemale" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="update_NK_Btn" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -149,9 +149,9 @@
                           <Component id="info_CCCD_NK_text" linkSize="1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           <Component id="info_ID_HK_text" linkSize="1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="info_Job_NK_text" linkSize="1" min="-2" max="-2" attributes="0"/>

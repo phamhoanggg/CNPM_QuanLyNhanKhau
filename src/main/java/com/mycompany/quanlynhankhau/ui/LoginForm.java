@@ -210,7 +210,6 @@ public class LoginForm extends javax.swing.JFrame {
     private void singupBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_singupBtnActionPerformed
         SignupForm signupForm = new SignupForm();
         signupForm.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_singupBtnActionPerformed
 
     /**
