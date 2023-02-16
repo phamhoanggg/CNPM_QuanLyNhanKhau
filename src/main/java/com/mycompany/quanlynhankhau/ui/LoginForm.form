@@ -35,7 +35,7 @@
           <Font name="Segoe UI" size="36" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="LOGIN"/>
+        <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng nh&#x1ead;p"/>
         <Property name="alignmentX" type="float" value="0.5"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>

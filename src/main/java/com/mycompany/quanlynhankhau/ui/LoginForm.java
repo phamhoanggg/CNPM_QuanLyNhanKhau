@@ -8,8 +8,7 @@ import com.mycompany.quanlynhankhau.Helpers.DataValidator;
 import com.mycompany.quanlynhankhau.Helpers.MessageDialogHelper;
 import com.mycompany.quanlynhankhau.Thongtin.NguoiDung;
 import com.mycompany.quanlynhankhau.dao.NguoiDungDao;
-import static com.sun.corba.se.impl.util.Utility.printStackTrace;
-import java.awt.Dimension;
+import javax.swing.JFrame;
 
 /**
  *
@@ -57,7 +56,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("LOGIN");
+        jLabel1.setText("Đăng nhập");
         jLabel1.setAlignmentX(0.5F);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 730, 69));
@@ -175,18 +174,18 @@ public class LoginForm extends javax.swing.JFrame {
                 dao.SetRememberPassword(rememberpw_check.isSelected(), usernameText.getText());
                 if (vaitro.equals("admin")){
                     HomepageForm homePage = new HomepageForm();
-                    homePage.setPreferredSize(new Dimension(1400, 1000));
+                    homePage.setExtendedState(JFrame.MAXIMIZED_BOTH); 
                     homePage.setVisible(true);
                 }
                 else{
                     UserPageForm userForm = new UserPageForm();
+                    userForm.setExtendedState(JFrame.MAXIMIZED_BOTH); 
                     userForm.setVisible(true);
                 }
                 
                 this.dispose();
             }
         }catch (Exception e){
-            printStackTrace();
             MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
         }
     }//GEN-LAST:event_loginBtnActionPerformed
@@ -202,13 +201,13 @@ public class LoginForm extends javax.swing.JFrame {
                 rememberpw_check.setSelected(true);
             }          
         }catch(Exception e){
-            printStackTrace();
             MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
         }
     }//GEN-LAST:event_usernameTextFocusLost
 
     private void singupBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_singupBtnActionPerformed
         SignupForm signupForm = new SignupForm();
+        
         signupForm.setVisible(true);
     }//GEN-LAST:event_singupBtnActionPerformed
 

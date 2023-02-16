@@ -92,8 +92,8 @@ public class HoKhauDao {
                 NhanKhau nk = new NhanKhau(rs.getString("idnhankhau"), rs.getString("idhokhau"),
                                         rs.getString("CCCD"), rs.getString("hoten"), rs.getString("ngaysinh"),
                                         rs.getString("gioitinh"), rs.getString("quanhevoichuho"), rs.getString("quequan"),
-                                        rs.getString("dantoc"), rs.getString("nghenghiep"), rs.getString("ngaydangkythuongtru"),
-                                        rs.getString("noidangkythuongtruchuyenden"), rs.getString("ghichu"));
+                                        rs.getString("dantoc"), rs.getString("nghenghiep"), rs.getString("diachithuongtru"),
+                                        rs.getString("ghichu"));
                 
                 nkList.add(nk);
             }

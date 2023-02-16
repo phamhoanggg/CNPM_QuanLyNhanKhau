@@ -51,7 +51,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="278" max="-2" attributes="0"/>
-                      <Component id="quitBtn" min="-2" pref="93" max="-2" attributes="0"/>
+                      <Component id="quitBtn" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
@@ -159,8 +159,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="20" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Tho&#xe1;t"/>
+        <Property name="text" type="java.lang.String" value="Quay l&#x1ea1;i"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="quitBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="cccdText">
       <Properties>

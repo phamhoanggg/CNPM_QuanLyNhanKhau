@@ -10,13 +10,13 @@ package com.mycompany.quanlynhankhau.Thongtin;
  */
 public class NhanKhau {
     private String idNK, idHK, cccd, hoTen, ngaySinh, gioiTinh, quanHeVoiChuHo, queQuan,
-            danToc, ngheNghiep, ngayDkThuongTru, noiDkThuongTru, ghiChu;
+            danToc, ngheNghiep, diachithuongtru, ghiChu;
 
 // Constructors
     public NhanKhau() {
     }
 
-    public NhanKhau(String idNK, String idHK, String cccd, String hoTen, String ngaySinh, String gioiTinh, String quanHeVoiChuHo, String queQuan, String danToc, String ngheNghiep, String ngayDkThuongTru, String noiDkThuongTru, String ghiChu) {
+    public NhanKhau(String idNK, String idHK, String cccd, String hoTen, String ngaySinh, String gioiTinh, String quanHeVoiChuHo, String queQuan, String danToc, String ngheNghiep, String diachithuongtru, String ghiChu) {
         this.idNK = idNK;
         this.idHK = idHK;
         this.cccd = cccd;
@@ -27,8 +27,7 @@ public class NhanKhau {
         this.queQuan = queQuan;
         this.danToc = danToc;
         this.ngheNghiep = ngheNghiep;
-        this.ngayDkThuongTru = ngayDkThuongTru;
-        this.noiDkThuongTru = noiDkThuongTru;
+        this.diachithuongtru = diachithuongtru;
         this.ghiChu = ghiChu;
     }
 
@@ -113,20 +112,12 @@ public class NhanKhau {
         this.ngheNghiep = ngheNghiep;
     }
 
-    public String getNgayDkThuongTru() {
-        return ngayDkThuongTru;
+    public String getDiachithuongtru() {
+        return diachithuongtru;
     }
 
-    public void setNgayDkThuongTru(String ngayDkThuongTru) {
-        this.ngayDkThuongTru = ngayDkThuongTru;
-    }
-
-    public String getNoiDkThuongTru() {
-        return noiDkThuongTru;
-    }
-
-    public void setNoiDkThuongTru(String noiDkThuongTru) {
-        this.noiDkThuongTru = noiDkThuongTru;
+    public void setDiachithuongtru(String diachithuongtru) {
+        this.diachithuongtru = diachithuongtru;
     }
 
     public String getGhiChu() {

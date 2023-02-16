@@ -36,7 +36,7 @@ public class CachLyDao {
     }
     
     public void InsertCL(CachLy cl) throws Exception{
-        String insert_sql = "INSERT INTO `cachly` (`idnhankhau`, `hoten`, `trangthaicachly, `thoigianbatdaucachly`, `mucdocachly`,"
+        String insert_sql = "INSERT INTO `cachly` (`idnhankhau`, `hoten`, `trangthaicachly`, `thoigianbatdaucachly`, `mucdocachly`,"
                 + "`dakiemtracovid`, `hinhthuckiemtra`, `thoigiankiemtra`, `ketquakiemtra`) "
                 + "VALUES (?,?,?,?,?,?,?,?,?)";
         
@@ -58,6 +58,47 @@ public class CachLyDao {
         }
     }
     
+    public void InsertTTSK(String id, String hoten, String diquavungdich, String ttsk, String vacxin, String ghichu) throws Exception{
+        String sql = "INSERT INTO `thongtinsuckhoe` (`idnhakhau`, `hoten`, `somuidatiem`, `diquavungdich`, `trangthaisuckhoe`, `ghichu`)"+
+                "VALUES (?, ?, ?, ?, ?, ?)";
+        
+        try(
+            Connection conn = DatabaseHelper.ConnectDB();
+            PreparedStatement prepSt = conn.prepareStatement(sql);
+        ){
+            prepSt.setString(1, id);
+            prepSt.setString(2, hoten);
+            prepSt.setString(3, vacxin);
+            prepSt.setString(4, diquavungdich);
+            prepSt.setString(5, ttsk);
+            prepSt.setString(6, ghichu);
+
+            prepSt.execute();
+        }
+    }
+    
+    public void UpdatePC(CachLy cl) throws Exception{
+        String update_cl_sql = "UPDATE `cachly` SET `hoten` = ?, `trangthaicachly` = ?, `thoigianbatdaucachly` = ?, `mucdocachly` = ?,"
+                + "`dakiemtracovid` = ?, `hinhthuckiemtra` = ?, `thoigiankiemtra` = ?, `ketquakiemtra` = ? WHERE `idnhankhau` = ?";
+        
+        try(
+            Connection conn = DatabaseHelper.ConnectDB();
+            PreparedStatement updatePrepSt = conn.prepareStatement(update_cl_sql);
+        ){
+            updatePrepSt.setString(1, cl.getHoTen());
+            updatePrepSt.setString(2, cl.getTrangThai());
+            updatePrepSt.setString(3, cl.getTgBatDau());
+            updatePrepSt.setString(4, cl.getMucDo());
+            updatePrepSt.setString(5, cl.getKiemTra());
+            updatePrepSt.setString(6, cl.getHinhThuc());
+            updatePrepSt.setString(7, cl.getTgKiemTra());
+            updatePrepSt.setString(8, cl.getKetQua());
+            updatePrepSt.setString(9, cl.getIdNK());
+
+            updatePrepSt.execute();
+        }
+    }
+    
     public CachLy SearchCL(String info) throws Exception{
         String search_CL_sql = "SELECT * FROM `cachly`"+
                             "  WHERE `cachly`.`idnhankhau` = ? OR `cachly`.`CCCD` = ?";
@@ -72,8 +113,7 @@ public class CachLyDao {
                 CachLy cl = new CachLy(rs.getString("idnhankhau"), rs.getString("CCCD"), rs.getString("hoten"),
                                 rs.getString("thoigianbatdaucachly"), rs.getString("hinhthuckiemtra"), rs.getString("thoigiankiemtra"), rs.getString("dakiemtracovid"),
                                  rs.getString("ketquakiemtra"), rs.getString("mucdocachly"), rs.getString("trangthaicachly"));
-                
-                
+
                 return cl;
             }else{
                 return null;

@@ -5,6 +5,8 @@
 package com.mycompany.quanlynhankhau.Helpers;
 
 import java.awt.Component;
+import java.awt.Font;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,15 +15,23 @@ import javax.swing.JOptionPane;
  */
 public class MessageDialogHelper {
     public static void showMessageDialog(Component parent, String content, String title) {
-        JOptionPane.showMessageDialog(parent, content, title, JOptionPane.INFORMATION_MESSAGE);
+        JLabel Content = new JLabel(content);
+        Content.setFont(new Font("Verdana", Font.BOLD, 20));
+        JOptionPane.showMessageDialog(parent, Content, title, JOptionPane.INFORMATION_MESSAGE);
     }
     
     public static void showErrorDialog(Component parent, String content, String title) {
-        JOptionPane.showMessageDialog(parent, content, title, JOptionPane.ERROR_MESSAGE);
+
+        JLabel Content = new JLabel(content);
+        Content.setFont(new Font("Verdana", Font.BOLD, 20));
+        JOptionPane.showMessageDialog(parent, Content, title, JOptionPane.ERROR_MESSAGE);
     }
     
     public static int showConfirmDialog(Component parent, String content, String title) {
-        int choose = JOptionPane.showConfirmDialog(parent, content, title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        JLabel Content = new JLabel(content);
+        Content.setFont(new Font("Verdana", Font.BOLD, 20));
+        int choose = JOptionPane.showConfirmDialog(parent, Content, title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         return choose;
     }
 }

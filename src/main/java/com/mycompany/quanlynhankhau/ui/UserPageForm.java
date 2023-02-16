@@ -8,12 +8,10 @@ import com.mycompany.quanlynhankhau.Helpers.DataValidator;
 import com.mycompany.quanlynhankhau.Helpers.MessageDialogHelper;
 import com.mycompany.quanlynhankhau.Thongtin.CachLy;
 import com.mycompany.quanlynhankhau.Thongtin.HoKhau;
-import com.mycompany.quanlynhankhau.Thongtin.NguoiDung;
 import com.mycompany.quanlynhankhau.Thongtin.NhanKhau;
 import com.mycompany.quanlynhankhau.dao.CachLyDao;
 import com.mycompany.quanlynhankhau.dao.HoKhauDao;
 import com.mycompany.quanlynhankhau.dao.NhanKhauDao;
-//import staticcom.sun.corba.se.impl.util.Utility.printStackTrace;
 
 /**
  *
@@ -104,9 +102,9 @@ public class UserPageForm extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(568, 568, 568)
+                        .addContainerGap(530, Short.MAX_VALUE)
                         .addComponent(search_ID_NK, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 568, Short.MAX_VALUE))
+                        .addGap(0, 529, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,8 +112,8 @@ public class UserPageForm extends javax.swing.JFrame {
                             .addComponent(ShowNKInfo))))
                 .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(621, 621, 621)
-                .addComponent(Show_NK_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Show_NK_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -125,10 +123,11 @@ public class UserPageForm extends javax.swing.JFrame {
                 .addComponent(jLabel25)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(search_ID_NK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(24, 24, 24)
                 .addComponent(Show_NK_Btn)
-                .addGap(18, 18, 18)
-                .addComponent(ShowNKInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ShowNKInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane5.addTab("Hiển thị", jPanel4);
@@ -164,17 +163,17 @@ public class UserPageForm extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, 1380, Short.MAX_VALUE)
-                    .addComponent(ShowHKInfo)
+                    .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, 1303, Short.MAX_VALUE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Search_ID_HK, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(Show_HK_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Search_ID_HK, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addComponent(ShowHKInfo)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Show_HK_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,9 +184,8 @@ public class UserPageForm extends javax.swing.JFrame {
                 .addComponent(Search_ID_HK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(Show_HK_Btn)
-                .addGap(18, 18, 18)
-                .addComponent(ShowHKInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(24, 24, 24)
+                .addComponent(ShowHKInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE))
         );
 
         jTabbedPane6.addTab("Hiển thị", jPanel9);
@@ -222,9 +220,9 @@ public class UserPageForm extends javax.swing.JFrame {
                             .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ShowPCInfo)))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addContainerGap(568, Short.MAX_VALUE)
+                        .addContainerGap(533, Short.MAX_VALUE)
                         .addComponent(Search_IDNK_PC, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 568, Short.MAX_VALUE)))
+                        .addGap(0, 526, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -241,7 +239,7 @@ public class UserPageForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Show_PC_Btn)
                 .addGap(18, 18, 18)
-                .addComponent(ShowPCInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
+                .addComponent(ShowPCInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -262,24 +260,26 @@ public class UserPageForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(logoutBtn)
-                .addGap(102, 102, 102))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(HK_Tab))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1323, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(HK_Tab, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(logoutBtn)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(logoutBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(HK_Tab, javax.swing.GroupLayout.PREFERRED_SIZE, 763, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(HK_Tab, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -350,7 +350,7 @@ public class UserPageForm extends javax.swing.JFrame {
         try{
             CachLy cl = dao.SearchCL(Search_IDNK_PC.getText());
             if (cl == null){
-                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không tồn tại!", "Lỗi");
+                MessageDialogHelper.showErrorDialog(this, "Nhân khẩu không có thông tin cách ly!", "Lỗi");
             }else{
                 CL_Info infoTab = new CL_Info(cl);
                 infoTab.SetEditableTextField(false);

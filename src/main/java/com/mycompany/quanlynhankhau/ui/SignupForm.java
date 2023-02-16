@@ -8,8 +8,6 @@ import com.mycompany.quanlynhankhau.Helpers.DataValidator;
 import com.mycompany.quanlynhankhau.Helpers.MessageDialogHelper;
 import com.mycompany.quanlynhankhau.dao.NguoiDungDao;
 import com.mycompany.quanlynhankhau.dao.NhanKhauDao;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -77,7 +75,12 @@ public class SignupForm extends javax.swing.JFrame {
         });
 
         quitBtn.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        quitBtn.setText("Thoát");
+        quitBtn.setText("Quay lại");
+        quitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitBtnActionPerformed(evt);
+            }
+        });
 
         cccdText.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
 
@@ -112,7 +115,7 @@ public class SignupForm extends javax.swing.JFrame {
                             .addComponent(refillPasswordText)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(278, 278, 278)
-                        .addComponent(quitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(quitBtn)))
                 .addGap(79, 79, 79))
         );
         layout.setVerticalGroup(
@@ -189,6 +192,10 @@ public class SignupForm extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_signupBtnActionPerformed
+
+    private void quitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitBtnActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_quitBtnActionPerformed
 
     /**
      * @param args the command line arguments

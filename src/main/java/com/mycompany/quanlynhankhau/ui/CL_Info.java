@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
@@ -8,7 +8,6 @@ import com.mycompany.quanlynhankhau.Helpers.DataValidator;
 import com.mycompany.quanlynhankhau.Helpers.MessageDialogHelper;
 import com.mycompany.quanlynhankhau.Thongtin.CachLy;
 import com.mycompany.quanlynhankhau.dao.CachLyDao;
-import static com.sun.corba.se.impl.util.Utility.printStackTrace;
 
 /**
  *
@@ -30,10 +29,10 @@ public class CL_Info extends javax.swing.JPanel {
         info_name_PC_text.setText(cl.getHoTen());
         info_CCCD_PC_text.setText(cl.getCccd());              
         info_methodTest_PC_text.setText(cl.getHinhThuc());        
-        info_timeTest_PC_text.setText(cl.getTgKiemTra());
-        info_startTimeCL_PC_text.setText(cl.getTgBatDau());
+        
         if (cl.getKiemTra().equals("Đã thực hiện")){
             info_done_test.setSelected(true);
+            DataValidator.SetDateFromString(cl.getTgKiemTra(), test_day, test_month, test_year);
         }
         else{
             info_notdone_test.setSelected(true);
@@ -41,6 +40,7 @@ public class CL_Info extends javax.swing.JPanel {
         
         if (cl.getKetQua().equals("Dương tính")){
             info_positive.setSelected(true);
+            DataValidator.SetDateFromString(cl.getTgBatDau(), cl_day, cl_month, cl_year);
         }
         else{
             info_negative.setSelected(true);
@@ -71,10 +71,20 @@ public class CL_Info extends javax.swing.JPanel {
     public void SetEditableTextField(boolean isEditable){
         info_IDNK_PC_text.setEditable(isEditable);    
         info_name_PC_text.setEditable(isEditable);
-        info_CCCD_PC_text.setEditable(isEditable);        
-        info_timeTest_PC_text.setEditable(isEditable);       
-        info_methodTest_PC_text.setEditable(isEditable);      
-        info_startTimeCL_PC_text.setEditable(isEditable); 
+        info_CCCD_PC_text.setEditable(isEditable);     
+        info_done_test.setEnabled(isEditable);
+        info_notdone_test.setEnabled(isEditable);
+        info_positive.setEnabled(isEditable);
+        info_negative.setEnabled(isEditable);
+        test_day.setEnabled(isEditable);
+        test_month.setEnabled(isEditable);
+        test_year.setEnabled(isEditable);
+        info_methodTest_PC_text.setEditable(isEditable);    
+        info_Cachly_TN.setEnabled(isEditable);
+        info_Cachly_KVCL.setEnabled(isEditable);
+        cl_day.setEnabled(isEditable);
+        cl_month.setEnabled(isEditable);
+        cl_year.setEnabled(isEditable);
         
         update_PC_Btn.setVisible(isEditable);
     }
@@ -97,14 +107,12 @@ public class CL_Info extends javax.swing.JPanel {
         info_name_PC_text = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
         info_methodTest_PC_text = new javax.swing.JTextField();
-        info_timeTest_PC_text = new javax.swing.JTextField();
         update_PC_Btn = new javax.swing.JButton();
         jLabel39 = new javax.swing.JLabel();
         info_done_test = new javax.swing.JRadioButton();
         info_notdone_test = new javax.swing.JRadioButton();
         info_CCCD_PC_text = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
-        info_startTimeCL_PC_text = new javax.swing.JTextField();
         info_positive = new javax.swing.JRadioButton();
         info_negative = new javax.swing.JRadioButton();
         jLabel23 = new javax.swing.JLabel();
@@ -114,6 +122,20 @@ public class CL_Info extends javax.swing.JPanel {
         info_level_F0 = new javax.swing.JRadioButton();
         info_Cachly_TN = new javax.swing.JRadioButton();
         info_Cachly_KVCL = new javax.swing.JRadioButton();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        cl_day = new javax.swing.JComboBox<>();
+        cl_month = new javax.swing.JComboBox<>();
+        cl_year = new javax.swing.JComboBox<>();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        test_day = new javax.swing.JComboBox<>();
+        test_month = new javax.swing.JComboBox<>();
+        test_year = new javax.swing.JComboBox<>();
+        jLabel37 = new javax.swing.JLabel();
+        info_vaccine_num = new javax.swing.JTextField();
 
         jPanel5.setBorder(new javax.swing.border.MatteBorder(null));
 
@@ -140,13 +162,6 @@ public class CL_Info extends javax.swing.JPanel {
         jLabel38.setText("Họ và tên");
 
         info_methodTest_PC_text.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-
-        info_timeTest_PC_text.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        info_timeTest_PC_text.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                info_timeTest_PC_textActionPerformed(evt);
-            }
-        });
 
         update_PC_Btn.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         update_PC_Btn.setText("Cập nhật");
@@ -185,8 +200,6 @@ public class CL_Info extends javax.swing.JPanel {
         jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel40.setText("Thời gian kiểm tra");
 
-        info_startTimeCL_PC_text.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-
         info_positive.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         info_positive.setText("Dương tính");
 
@@ -224,58 +237,133 @@ public class CL_Info extends javax.swing.JPanel {
         info_Cachly_KVCL.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         info_Cachly_KVCL.setText("Tại khu vực cách ly ");
 
+        jLabel62.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel62.setText("Ngày");
+
+        jLabel63.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel63.setText("Tháng");
+
+        jLabel64.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel64.setText("Năm");
+
+        cl_day.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        cl_day.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " ", " " }));
+        cl_day.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cl_dayActionPerformed(evt);
+            }
+        });
+
+        cl_month.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        cl_month.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+
+        cl_year.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        cl_year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930", "1929", "1928", "1927", "1926", "1925", "1924", "1923", "1922", "1921", "1920", "1919", "1918", "1917", "1916", "1915", "1914", "1913", "1912", "1911", "1910", " " }));
+
+        jLabel65.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel65.setText("Ngày");
+
+        jLabel66.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel66.setText("Tháng");
+
+        jLabel67.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel67.setText("Năm");
+
+        test_day.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        test_day.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " ", " " }));
+        test_day.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                test_dayActionPerformed(evt);
+            }
+        });
+
+        test_month.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        test_month.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+
+        test_year.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        test_year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930", "1929", "1928", "1927", "1926", "1925", "1924", "1923", "1922", "1921", "1920", "1919", "1918", "1917", "1916", "1915", "1914", "1913", "1912", "1911", "1910", " " }));
+
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel37.setText("Số mũi vắc-xin Covid-19 đã tiêm");
+
+        info_vaccine_num.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        info_vaccine_num.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                info_vaccine_numActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(226, 226, 226)
+                .addContainerGap(252, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(info_Cachly_KVCL)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(info_Cachly_KVCL)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(info_startTimeCL_PC_text)
-                            .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(info_IDNK_PC_text)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(info_done_test, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(info_notdone_test, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(info_name_PC_text)
-                            .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(info_positive, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(info_negative, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(info_methodTest_PC_text, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(info_Cachly_TN, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(info_timeTest_PC_text)
-                                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                                    .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(jPanel5Layout.createSequentialGroup()
-                                    .addComponent(info_level_F2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(info_IDNK_PC_text)
+                                .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                    .addComponent(info_positive, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(info_negative, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(info_methodTest_PC_text, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(info_Cachly_TN, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(info_notdone_test, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(info_done_test, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(info_name_PC_text))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                                    .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(info_level_F1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(info_level_F0, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel64, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(jPanel5Layout.createSequentialGroup()
-                                    .addGap(125, 125, 125)
-                                    .addComponent(update_PC_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(info_CCCD_PC_text, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)))
-                        .addGap(142, 142, 142))))
+                                    .addComponent(cl_day, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cl_month, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cl_year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(135, 135, 135)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(info_level_F2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(info_level_F1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(info_level_F0, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(125, 125, 125)
+                                .addComponent(update_PC_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(test_day, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(test_month, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(test_year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(info_vaccine_num)
+                            .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(info_CCCD_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(269, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,45 +380,69 @@ public class CL_Info extends javax.swing.JPanel {
                         .addGap(15, 15, 15)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(info_name_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 34, Short.MAX_VALUE)
-                            .addComponent(info_CCCD_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel31)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(info_done_test)
-                            .addComponent(info_notdone_test))
-                        .addGap(18, 18, 18))
+                            .addComponent(info_CCCD_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel36)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(58, 58, 58)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                        .addComponent(jLabel31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(info_done_test)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(info_notdone_test)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(info_positive)
                             .addComponent(info_negative))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel39))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(info_methodTest_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel32))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addComponent(info_vaccine_num, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel37))
+                        .addGap(32, 32, 32)
                         .addComponent(jLabel40)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(info_timeTest_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel66)
+                            .addComponent(jLabel67)
+                            .addComponent(jLabel65))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(test_day, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(test_month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(test_year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(info_level_F2)
+                            .addComponent(info_level_F1)
+                            .addComponent(info_level_F0)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel63)
+                            .addComponent(jLabel64)
+                            .addComponent(jLabel62))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cl_day, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cl_month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cl_year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(info_methodTest_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
-                    .addComponent(jLabel23))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(info_startTimeCL_PC_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(info_level_F2)
-                    .addComponent(info_level_F1)
-                    .addComponent(info_level_F0))
-                .addGap(18, 18, 18)
                 .addComponent(jLabel22)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -338,16 +450,16 @@ public class CL_Info extends javax.swing.JPanel {
                     .addComponent(update_PC_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(info_Cachly_KVCL)
-                .addGap(121, 121, 121))
+                .addGap(38, 38, 38))
         );
 
-        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {info_CCCD_PC_text, info_IDNK_PC_text, info_methodTest_PC_text, info_name_PC_text, info_startTimeCL_PC_text, info_timeTest_PC_text});
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {info_CCCD_PC_text, info_IDNK_PC_text, info_methodTest_PC_text, info_name_PC_text});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1080, Short.MAX_VALUE)
+            .addGap(0, 1276, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -356,42 +468,42 @@ public class CL_Info extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 831, Short.MAX_VALUE)
+            .addGap(0, 714, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void info_timeTest_PC_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info_timeTest_PC_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_info_timeTest_PC_textActionPerformed
 
     private void update_PC_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_PC_BtnActionPerformed
         StringBuilder sb = new StringBuilder();
         DataValidator.validateEmpty(info_IDNK_PC_text, sb, "Vui lòng nhập ID nhân khẩu!");
         DataValidator.validateEmpty(info_name_PC_text, sb, "Vui lòng nhập họ và tên!");
         DataValidator.validateEmpty(info_CCCD_PC_text, sb, "Vui lòng nhập CCCD!");
-        DataValidator.validateEmpty(info_startTimeCL_PC_text, sb, "Vui lòng nhập thời gian bắt đầu cách ly!");
-        DataValidator.validateEmpty(info_timeTest_PC_text, sb, "Vui lòng nhập thời gian kiểm tra Covid-19!");
-        DataValidator.validateEmpty(info_methodTest_PC_text, sb, "Vui lòng nhập hình thức test Covid-19!");
-
+        
         if (!info_done_test.isSelected() && !info_notdone_test.isSelected()){
             sb.append("Vui lòng cho biết đã test Covid-19 chưa!\n");
         }
-
-        if (!info_Cachly_TN.isSelected() && !info_Cachly_KVCL.isSelected()){
-            sb.append("Vui lòng cho biết trạng thái cách ly Covid-19!\n");
-        }
-
-        if (!info_positive.isSelected() && !info_negative.isSelected()){
-            sb.append("Vui lòng cho biết kết quả test Covid-19!\n");
-        }
-
-        if (!info_level_F2.isSelected() && !info_level_F1.isSelected() && !info_level_F0.isSelected()){
-            sb.append("Vui lòng cho biết mức độ cách ly Covid-19 của bạn!\n");
+        
+        if (info_done_test.isSelected()){
+            DataValidator.DateValidator(test_day.getSelectedItem().toString(), test_month.getSelectedItem().toString(), test_year.getSelectedItem().toString(), sb, "Ngày kiểm tra Covid không hợp lệ!");
+            DataValidator.validateEmpty(info_methodTest_PC_text, sb, "Vui lòng nhập hình thức test Covid-19!");
+            if (!info_positive.isSelected() && !info_negative.isSelected()){
+                sb.append("Vui lòng cho biết kết quả test Covid-19!\n");
+            }
+            if (info_positive.isSelected()){
+                if (!info_Cachly_TN.isSelected() && !info_Cachly_KVCL.isSelected()){
+                    sb.append("Vui lòng cho biết trạng thái cách ly Covid-19!\n");
+                }
+                
+                if (!info_level_F2.isSelected() && !info_level_F1.isSelected() && !info_level_F0.isSelected()){
+                    sb.append("Vui lòng cho biết mức độ cách ly Covid-19 của bạn!\n");
+                }
+                
+                DataValidator.DateValidator(cl_day.getSelectedItem().toString(), cl_month.getSelectedItem().toString(), cl_year.getSelectedItem().toString(), sb, "Ngày bắt đầu cách ly không hợp lệ!");
+            }
         }
 
         if (sb.length() > 0){
@@ -407,20 +519,33 @@ public class CL_Info extends javax.swing.JPanel {
             }else{
                 MessageDialogHelper.showMessageDialog(this, "Thêm thông tin thành công!", "Thành công");
                 String test = info_done_test.isSelected() ? "Đã thực hiện" : "Chưa thực hiện";
-                String result = info_positive.isSelected() ? "Dương tính" : "Âm tính";
-                String status = info_Cachly_TN.isSelected() ? "Tại nhà" : "Tại khu vực cách ly";
-                String level;
-                if(info_level_F2.isSelected()) level = "1(F2)";
-                else if(info_level_F1.isSelected()) level = "1(F1)";
-                else level = "3(F0)";
+                String result = "";
+                String level = "";
+                String status = "";
+                String startCL = "";
+                String testTime = "";
+                if (info_done_test.isSelected()){
+                    result = info_positive.isSelected() ? "Dương tính" : "Âm tính";
+                    testTime = DataValidator.DatePerformer(test_day.getSelectedItem().toString(), test_month.getSelectedItem().toString(), test_year.getSelectedItem().toString());
+                    if (info_positive.isSelected()){
+                        status = info_Cachly_TN.isSelected() ? "Tại nhà" : "Tại khu vực cách ly";
+                        
+                        startCL = DataValidator.DatePerformer(cl_day.getSelectedItem().toString(), cl_month.getSelectedItem().toString(), cl_year.getSelectedItem().toString());
+                        
+                        if(info_level_F2.isSelected()) level = "1(F2)";
+                        else if(info_level_F1.isSelected()) level = "1(F1)";
+                        else level = "3(F0)";
+                    }
+                }
+                
+
                 CachLy cl = new CachLy(info_IDNK_PC_text.getText(), info_CCCD_PC_text.getText(),
-                    info_name_PC_text.getText(), test, result,info_timeTest_PC_text.getText(),
-                    info_methodTest_PC_text.getText(), info_startTimeCL_PC_text.getText(), level, status);
+                    info_name_PC_text.getText(), startCL, info_methodTest_PC_text.getText(),testTime,
+                    test, result, level, status);
 
                 dao.InsertCL(cl);
             }
         }catch (Exception e){
-            printStackTrace();
             MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
         }
     }//GEN-LAST:event_update_PC_BtnActionPerformed
@@ -445,8 +570,23 @@ public class CL_Info extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_info_level_F2ActionPerformed
 
+    private void cl_dayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cl_dayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cl_dayActionPerformed
+
+    private void test_dayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_test_dayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_test_dayActionPerformed
+
+    private void info_vaccine_numActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_info_vaccine_numActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_info_vaccine_numActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cl_day;
+    private javax.swing.JComboBox<String> cl_month;
+    private javax.swing.JComboBox<String> cl_year;
     private javax.swing.JTextField info_CCCD_PC_text;
     private javax.swing.JRadioButton info_Cachly_KVCL;
     private javax.swing.JRadioButton info_Cachly_TN;
@@ -460,8 +600,7 @@ public class CL_Info extends javax.swing.JPanel {
     private javax.swing.JRadioButton info_negative;
     private javax.swing.JRadioButton info_notdone_test;
     private javax.swing.JRadioButton info_positive;
-    private javax.swing.JTextField info_startTimeCL_PC_text;
-    private javax.swing.JTextField info_timeTest_PC_text;
+    private javax.swing.JTextField info_vaccine_num;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel31;
@@ -469,10 +608,20 @@ public class CL_Info extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JComboBox<String> test_day;
+    private javax.swing.JComboBox<String> test_month;
+    private javax.swing.JComboBox<String> test_year;
     private javax.swing.JButton update_PC_Btn;
     // End of variables declaration//GEN-END:variables
 

@@ -10,7 +10,10 @@ import com.mycompany.quanlynhankhau.Thongtin.HoKhau;
 import com.mycompany.quanlynhankhau.Thongtin.NhanKhau;
 import com.mycompany.quanlynhankhau.dao.HoKhauDao;
 import com.mycompany.quanlynhankhau.dao.NhanKhauDao;
-import static com.sun.corba.se.impl.util.Utility.printStackTrace;
+import java.awt.Font;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 
 /**
  *
@@ -34,6 +37,8 @@ public class HK_Info extends javax.swing.JPanel {
         info_HTCH_HK_text.setText(hk.getHoTen());
         info_note_HK_text.setText(hk.getGhiChu());  
         currentHK_ID = info_ID_HK_text.getText();
+        
+        ShowAllHKMembers(hk);
     }
     
     public void SetEditableTextField(boolean isEditable){
@@ -42,6 +47,31 @@ public class HK_Info extends javax.swing.JPanel {
         info_HTCH_HK_text.setEditable(isEditable);
         info_note_HK_text.setEditable(isEditable);
         update_HK_Btn.setVisible(isEditable);
+    }
+    
+    private void ShowAllHKMembers(HoKhau hk){
+        JTableHeader tableHeader = show_HK_members_tables.getTableHeader();
+        Font headerFont = new Font("Verdana", Font.PLAIN, 20);
+        tableHeader.setFont(headerFont);
+        
+        HoKhauDao dao = new HoKhauDao();
+        try{
+            List<NhanKhau> hkList = dao.GetNKInHK(hk.getIdHK());
+            DefaultTableModel model = (DefaultTableModel)show_HK_members_tables.getModel();
+            
+            Object[] row = new Object[5];
+            for (int i = 0; i < hkList.size(); i++){
+                row[0] = hkList.get(i).getIdHK();
+                row[1] = hkList.get(i).getIdNK();
+                row[2] = hkList.get(i).getHoTen();
+                row[3] = hkList.get(i).getCccd();
+                row[4] = hkList.get(i).getQuanHeVoiChuHo();
+
+                model.addRow(row);
+            }
+        }catch(Exception e){
+            
+        }
     }
     
     /**
@@ -63,6 +93,8 @@ public class HK_Info extends javax.swing.JPanel {
         update_HK_Btn = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         info_note_HK_text = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        show_HK_members_tables = new javax.swing.JTable();
 
         jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
 
@@ -94,28 +126,53 @@ public class HK_Info extends javax.swing.JPanel {
 
         info_note_HK_text.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
 
+        show_HK_members_tables.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        show_HK_members_tables.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID Hộ khẩu", "ID Nhân khẩu", "Họ tên", "CCCD", "Quan hệ với chủ hộ"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        show_HK_members_tables.setRowHeight(50);
+        jScrollPane1.setViewportView(show_HK_members_tables);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(update_HK_Btn)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(info_HTCH_HK_text)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(info_ID_HK_text))
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(148, 148, 148)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(info_CCCD_HK_text, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(info_note_HK_text, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 203, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(update_HK_Btn)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(info_HTCH_HK_text)
+                                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(info_ID_HK_text))
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(148, 148, 148)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(info_CCCD_HK_text, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(info_note_HK_text, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 203, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
+                .addContainerGap())
         );
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {info_CCCD_HK_text, info_HTCH_HK_text, info_ID_HK_text, info_note_HK_text});
@@ -141,9 +198,11 @@ public class HK_Info extends javax.swing.JPanel {
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(info_note_HK_text, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(update_HK_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {info_CCCD_HK_text, info_HTCH_HK_text, info_ID_HK_text, info_note_HK_text});
@@ -160,8 +219,8 @@ public class HK_Info extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -195,7 +254,6 @@ public class HK_Info extends javax.swing.JPanel {
             
 
         }catch (Exception e){
-            printStackTrace();
             MessageDialogHelper.showErrorDialog(this, e.getMessage(), "Lỗi");
         }
     }//GEN-LAST:event_update_HK_BtnActionPerformed
@@ -211,6 +269,8 @@ public class HK_Info extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable show_HK_members_tables;
     private javax.swing.JButton update_HK_Btn;
     // End of variables declaration//GEN-END:variables
 }

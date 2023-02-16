@@ -5,6 +5,7 @@
 package com.mycompany.quanlynhankhau.Helpers;
 
 import java.awt.Color;
+import javax.swing.JComboBox;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -60,6 +61,26 @@ public class DataValidator {
     }
     
     public static String DatePerformer(String day, String month, String year){
-        return year + "-" + month + " " + day;  
+        if (Integer.parseInt(day) < 10){
+            day = "0"+day;
+        }
+        
+        if (Integer.parseInt(month) < 10){
+            month = "0"+month;
+        }
+        
+        return year + "-" + month + "-" + day;  
+    }
+    
+    public static void SetDateFromString(String date, JComboBox day, JComboBox month, JComboBox year){
+        String[] strList = date.split("-", 3);
+        int Year, Month, Day;
+        Year = Integer.parseInt(strList[0]);
+        Month = Integer.parseInt(strList[1]);
+        Day = Integer.parseInt(strList[2]);
+        
+        year.setSelectedItem(Integer.toString(Year));
+        month.setSelectedItem(Integer.toString(Month));
+        day.setSelectedItem(Integer.toString(Day));
     }
 }
